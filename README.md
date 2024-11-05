@@ -47,7 +47,8 @@ For reference refer to the documentation of MiniAudio.
 A few examples are included, here is a list of them:
 
 ### Example list
-- BasicAudioPlayback  
+- BasicAudioPlayback 
+- EngineEffects
 
 ### Running examples
 To run an example, open your terminal INSIDE of the library directory and then run:
