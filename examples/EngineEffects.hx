@@ -67,6 +67,7 @@ class EngineEffects {
 
         // clean up
         Miniaudio.ma_sound_uninit(sound);
+        Miniaudio.ma_lpf_node_uninit(lpfNode, null);
         Miniaudio.ma_engine_uninit(engine);
     }
 }
