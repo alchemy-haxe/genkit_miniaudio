@@ -1,0 +1,12 @@
+# lib
+-L genkit_miniaudio
+
+# loc
+--class-path examples
+--main EngineEffects
+
+# out
+--cpp bin/EngineEffects
+
+# after
+--cmd start /WAIT /B ./bin/EngineEffects/EngineEffects

@@ -1,0 +1,12 @@
+# lib
+-L genkit_miniaudio
+
+# loc
+--class-path examples
+--main BasicAudioPlayback
+
+# out
+--cpp bin/BasicAudioPlayback
+
+# after
+--cmd start /WAIT /B ./bin/BasicAudioPlayback/BasicAudioPlayback

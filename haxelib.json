@@ -1,0 +1,14 @@
+{
+    "contributors": [
+        "mikaib"
+    ],
+    "version": "1.1.0",
+    "license": "MIT",
+    "tags": [],
+    "releasenote": "1.0",
+    "classPath": "source",
+    "dependencies": {},
+    "name": "genkit_miniaudio",
+    "description": "Miniaudio bindings for hxcpp",
+    "url": "https://mki.sh"
+}
