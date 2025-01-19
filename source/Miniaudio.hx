@@ -2806,10 +2806,10 @@ extern class Miniaudio {
     public static function ma_data_source_init(pConfig: cpp.Star<MaDataSourceConfig>, pDataSource: cpp.Star<MaDataSource>): MaResult;
 
     @:native("ma_audio_buffer_ref_init")
-    public static function ma_audio_buffer_ref_init(format: MaFormat, channels: cpp.UInt32, pData: cpp.Star<Void>, sizeInFrames: cpp.UInt64, pAudioBufferRef: cpp.Star<MaAudioBufferRef>): MaResult;
+    public static function ma_audio_buffer_ref_init(format: MaFormat, channels: cpp.UInt32, pData: cpp.Star<cpp.Void>, sizeInFrames: cpp.UInt64, pAudioBufferRef: cpp.Star<MaAudioBufferRef>): MaResult;
 
     @:native("ma_audio_buffer_config_init")
-    public static function ma_audio_buffer_config_init(format: MaFormat, channels: cpp.UInt32, sizeInFrames: cpp.UInt64, pData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): MaAudioBufferConfig;
+    public static function ma_audio_buffer_config_init(format: MaFormat, channels: cpp.UInt32, sizeInFrames: cpp.UInt64, pData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): MaAudioBufferConfig;
 
     @:native("ma_audio_buffer_init")
     public static function ma_audio_buffer_init(pConfig: cpp.Star<MaAudioBufferConfig>, pAudioBuffer: cpp.Star<MaAudioBuffer>): MaResult;
@@ -2824,10 +2824,10 @@ extern class Miniaudio {
     public static function ma_paged_audio_buffer_init(pConfig: cpp.Star<MaPagedAudioBufferConfig>, pPagedAudioBuffer: cpp.Star<MaPagedAudioBuffer>): MaResult;
 
     @:native("ma_rb_init_ex")
-    public static function ma_rb_init_ex(subbufferSizeInBytes: cpp.SizeT, subbufferCount: cpp.SizeT, subbufferStrideInBytes: cpp.SizeT, pOptionalPreallocatedBuffer: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pRB: cpp.Star<MaRb>): MaResult;
+    public static function ma_rb_init_ex(subbufferSizeInBytes: cpp.SizeT, subbufferCount: cpp.SizeT, subbufferStrideInBytes: cpp.SizeT, pOptionalPreallocatedBuffer: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pRB: cpp.Star<MaRb>): MaResult;
 
     @:native("ma_pcm_rb_init_ex")
-    public static function ma_pcm_rb_init_ex(format: MaFormat, channels: cpp.UInt32, subbufferSizeInFrames: cpp.UInt32, subbufferCount: cpp.UInt32, subbufferStrideInFrames: cpp.UInt32, pOptionalPreallocatedBuffer: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pRB: cpp.Star<MaPcmRb>): MaResult;
+    public static function ma_pcm_rb_init_ex(format: MaFormat, channels: cpp.UInt32, subbufferSizeInFrames: cpp.UInt32, subbufferCount: cpp.UInt32, subbufferStrideInFrames: cpp.UInt32, pOptionalPreallocatedBuffer: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pRB: cpp.Star<MaPcmRb>): MaResult;
 
     @:native("ma_duplex_rb_init")
     public static function ma_duplex_rb_init(captureFormat: MaFormat, captureChannels: cpp.UInt32, sampleRate: cpp.UInt32, captureInternalSampleRate: cpp.UInt32, captureInternalPeriodSizeInFrames: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pRB: cpp.Star<MaDuplexRb>): MaResult;
@@ -2869,7 +2869,7 @@ extern class Miniaudio {
     public static function ma_context_config_init(): MaContextConfig;
 
     @:native("ma_context_enumerate_devices")
-    public static function ma_context_enumerate_devices(pContext: cpp.Star<MaContext>, callback: MaEnumDevicesCallbackProc, pUserData: cpp.Star<Void>): MaResult;
+    public static function ma_context_enumerate_devices(pContext: cpp.Star<MaContext>, callback: MaEnumDevicesCallbackProc, pUserData: cpp.Star<cpp.Void>): MaResult;
 
     @:native("ma_device_init")
     public static function ma_device_init(pContext: cpp.Star<MaContext>, pConfig: cpp.Star<MaDeviceConfig>, pDevice: cpp.Star<MaDevice>): MaResult;
@@ -2896,7 +2896,7 @@ extern class Miniaudio {
     public static function ma_encoder_config_init(encodingFormat: MaEncodingFormat, format: MaFormat, channels: cpp.UInt32, sampleRate: cpp.UInt32): MaEncoderConfig;
 
     @:native("ma_encoder_init")
-    public static function ma_encoder_init(onWrite: MaEncoderWriteProc, onSeek: MaEncoderSeekProc, pUserData: cpp.Star<Void>, pConfig: cpp.Star<MaEncoderConfig>, pEncoder: cpp.Star<MaEncoder>): MaResult;
+    public static function ma_encoder_init(onWrite: MaEncoderWriteProc, onSeek: MaEncoderSeekProc, pUserData: cpp.Star<cpp.Void>, pConfig: cpp.Star<MaEncoderConfig>, pEncoder: cpp.Star<MaEncoder>): MaResult;
 
     @:native("ma_waveform_config_init")
     public static function ma_waveform_config_init(format: MaFormat, channels: cpp.UInt32, sampleRate: cpp.UInt32, type: MaWaveformType, amplitude: cpp.Float64, frequency: cpp.Float64): MaWaveformConfig;
@@ -3115,7 +3115,7 @@ extern class Miniaudio {
     public static function ma_async_notification_event_signal(pNotificationEvent: cpp.Star<MaAsyncNotificationEvent>): MaResult;
 
     @:native("ma_slot_allocator_init_preallocated")
-    public static function ma_slot_allocator_init_preallocated(pConfig: cpp.Star<MaSlotAllocatorConfig>, pHeap: cpp.Star<Void>, pAllocator: cpp.Star<MaSlotAllocator>): MaResult;
+    public static function ma_slot_allocator_init_preallocated(pConfig: cpp.Star<MaSlotAllocatorConfig>, pHeap: cpp.Star<cpp.Void>, pAllocator: cpp.Star<MaSlotAllocator>): MaResult;
 
     @:native("ma_slot_allocator_init")
     public static function ma_slot_allocator_init(pConfig: cpp.Star<MaSlotAllocatorConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pAllocator: cpp.Star<MaSlotAllocator>): MaResult;
@@ -3133,7 +3133,7 @@ extern class Miniaudio {
     public static function ma_job_process(pJob: cpp.Star<MaJob>): MaResult;
 
     @:native("ma_job_queue_init_preallocated")
-    public static function ma_job_queue_init_preallocated(pConfig: cpp.Star<MaJobQueueConfig>, pHeap: cpp.Star<Void>, pQueue: cpp.Star<MaJobQueue>): MaResult;
+    public static function ma_job_queue_init_preallocated(pConfig: cpp.Star<MaJobQueueConfig>, pHeap: cpp.Star<cpp.Void>, pQueue: cpp.Star<MaJobQueue>): MaResult;
 
     @:native("ma_job_queue_init")
     public static function ma_job_queue_init(pConfig: cpp.Star<MaJobQueueConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pQueue: cpp.Star<MaJobQueue>): MaResult;
@@ -3250,7 +3250,7 @@ extern class Miniaudio {
     public static function ma_device_get_master_volume_db(pDevice: cpp.Star<MaDevice>, pGainDB: cpp.Star<cpp.Float32>): MaResult;
 
     @:native("ma_device_handle_backend_data_callback")
-    public static function ma_device_handle_backend_data_callback(pDevice: cpp.Star<MaDevice>, pOutput: cpp.Star<Void>, pInput: cpp.Star<Void>, frameCount: cpp.UInt32): MaResult;
+    public static function ma_device_handle_backend_data_callback(pDevice: cpp.Star<MaDevice>, pOutput: cpp.Star<cpp.Void>, pInput: cpp.Star<cpp.Void>, frameCount: cpp.UInt32): MaResult;
 
     @:native("ma_calculate_buffer_size_in_frames_from_descriptor")
     public static function ma_calculate_buffer_size_in_frames_from_descriptor(pDescriptor: cpp.Star<MaDeviceDescriptor>, nativeSampleRate: cpp.UInt32, performanceProfile: MaPerformanceProfile): cpp.UInt32;
@@ -3262,13 +3262,13 @@ extern class Miniaudio {
     public static function ma_calculate_buffer_size_in_frames_from_milliseconds(bufferSizeInMilliseconds: cpp.UInt32, sampleRate: cpp.UInt32): cpp.UInt32;
 
     @:native("ma_copy_pcm_frames")
-    public static function ma_copy_pcm_frames(dst: cpp.Star<Void>, src: cpp.Star<Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32): Void;
+    public static function ma_copy_pcm_frames(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32): Void;
 
     @:native("ma_silence_pcm_frames")
-    public static function ma_silence_pcm_frames(p: cpp.Star<Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32): Void;
+    public static function ma_silence_pcm_frames(p: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32): Void;
 
     @:native("ma_offset_pcm_frames_ptr")
-    public static function ma_offset_pcm_frames_ptr(p: cpp.Star<Void>, offsetInFrames: cpp.UInt64, format: MaFormat, channels: cpp.UInt32): cpp.Star<Void>;
+    public static function ma_offset_pcm_frames_ptr(p: cpp.Star<cpp.Void>, offsetInFrames: cpp.UInt64, format: MaFormat, channels: cpp.UInt32): cpp.Star<cpp.Void>;
 
     @:native("ma_clip_samples_s16")
     public static function ma_clip_samples_s16(pDst: cpp.Star<cpp.Int16>, pSrc: cpp.Star<cpp.Int32>, count: cpp.UInt64): Void;
@@ -3283,7 +3283,7 @@ extern class Miniaudio {
     public static function ma_clip_samples_f32(pDst: cpp.Star<cpp.Float32>, pSrc: cpp.Star<cpp.Float32>, count: cpp.UInt64): Void;
 
     @:native("ma_clip_pcm_frames")
-    public static function ma_clip_pcm_frames(pDst: cpp.Star<Void>, pSrc: cpp.Star<Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32): Void;
+    public static function ma_clip_pcm_frames(pDst: cpp.Star<cpp.Void>, pSrc: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32): Void;
 
     @:native("ma_copy_and_apply_volume_factor_u8")
     public static function ma_copy_and_apply_volume_factor_u8(pSamplesOut: cpp.Star<cpp.UInt8>, pSamplesIn: cpp.Star<cpp.UInt8>, sampleCount: cpp.UInt64, factor: cpp.Float32): Void;
@@ -3292,7 +3292,7 @@ extern class Miniaudio {
     public static function ma_copy_and_apply_volume_factor_s16(pSamplesOut: cpp.Star<cpp.Int16>, pSamplesIn: cpp.Star<cpp.Int16>, sampleCount: cpp.UInt64, factor: cpp.Float32): Void;
 
     @:native("ma_copy_and_apply_volume_factor_s24")
-    public static function ma_copy_and_apply_volume_factor_s24(pSamplesOut: cpp.Star<Void>, pSamplesIn: cpp.Star<Void>, sampleCount: cpp.UInt64, factor: cpp.Float32): Void;
+    public static function ma_copy_and_apply_volume_factor_s24(pSamplesOut: cpp.Star<cpp.Void>, pSamplesIn: cpp.Star<cpp.Void>, sampleCount: cpp.UInt64, factor: cpp.Float32): Void;
 
     @:native("ma_copy_and_apply_volume_factor_s32")
     public static function ma_copy_and_apply_volume_factor_s32(pSamplesOut: cpp.Star<cpp.Int32>, pSamplesIn: cpp.Star<cpp.Int32>, sampleCount: cpp.UInt64, factor: cpp.Float32): Void;
@@ -3307,7 +3307,7 @@ extern class Miniaudio {
     public static function ma_apply_volume_factor_s16(pSamples: cpp.Star<cpp.Int16>, sampleCount: cpp.UInt64, factor: cpp.Float32): Void;
 
     @:native("ma_apply_volume_factor_s24")
-    public static function ma_apply_volume_factor_s24(pSamples: cpp.Star<Void>, sampleCount: cpp.UInt64, factor: cpp.Float32): Void;
+    public static function ma_apply_volume_factor_s24(pSamples: cpp.Star<cpp.Void>, sampleCount: cpp.UInt64, factor: cpp.Float32): Void;
 
     @:native("ma_apply_volume_factor_s32")
     public static function ma_apply_volume_factor_s32(pSamples: cpp.Star<cpp.Int32>, sampleCount: cpp.UInt64, factor: cpp.Float32): Void;
@@ -3322,7 +3322,7 @@ extern class Miniaudio {
     public static function ma_copy_and_apply_volume_factor_pcm_frames_s16(pFramesOut: cpp.Star<cpp.Int16>, pFramesIn: cpp.Star<cpp.Int16>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
 
     @:native("ma_copy_and_apply_volume_factor_pcm_frames_s24")
-    public static function ma_copy_and_apply_volume_factor_pcm_frames_s24(pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
+    public static function ma_copy_and_apply_volume_factor_pcm_frames_s24(pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
 
     @:native("ma_copy_and_apply_volume_factor_pcm_frames_s32")
     public static function ma_copy_and_apply_volume_factor_pcm_frames_s32(pFramesOut: cpp.Star<cpp.Int32>, pFramesIn: cpp.Star<cpp.Int32>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
@@ -3331,7 +3331,7 @@ extern class Miniaudio {
     public static function ma_copy_and_apply_volume_factor_pcm_frames_f32(pFramesOut: cpp.Star<cpp.Float32>, pFramesIn: cpp.Star<cpp.Float32>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
 
     @:native("ma_copy_and_apply_volume_factor_pcm_frames")
-    public static function ma_copy_and_apply_volume_factor_pcm_frames(pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, factor: cpp.Float32): Void;
+    public static function ma_copy_and_apply_volume_factor_pcm_frames(pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, factor: cpp.Float32): Void;
 
     @:native("ma_apply_volume_factor_pcm_frames_u8")
     public static function ma_apply_volume_factor_pcm_frames_u8(pFrames: cpp.Star<cpp.UInt8>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
@@ -3340,7 +3340,7 @@ extern class Miniaudio {
     public static function ma_apply_volume_factor_pcm_frames_s16(pFrames: cpp.Star<cpp.Int16>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
 
     @:native("ma_apply_volume_factor_pcm_frames_s24")
-    public static function ma_apply_volume_factor_pcm_frames_s24(pFrames: cpp.Star<Void>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
+    public static function ma_apply_volume_factor_pcm_frames_s24(pFrames: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
 
     @:native("ma_apply_volume_factor_pcm_frames_s32")
     public static function ma_apply_volume_factor_pcm_frames_s32(pFrames: cpp.Star<cpp.Int32>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
@@ -3349,7 +3349,7 @@ extern class Miniaudio {
     public static function ma_apply_volume_factor_pcm_frames_f32(pFrames: cpp.Star<cpp.Float32>, frameCount: cpp.UInt64, channels: cpp.UInt32, factor: cpp.Float32): Void;
 
     @:native("ma_apply_volume_factor_pcm_frames")
-    public static function ma_apply_volume_factor_pcm_frames(pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, factor: cpp.Float32): Void;
+    public static function ma_apply_volume_factor_pcm_frames(pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, factor: cpp.Float32): Void;
 
     @:native("ma_copy_and_apply_volume_factor_per_channel_f32")
     public static function ma_copy_and_apply_volume_factor_per_channel_f32(pFramesOut: cpp.Star<cpp.Float32>, pFramesIn: cpp.Star<cpp.Float32>, frameCount: cpp.UInt64, channels: cpp.UInt32, pChannelGains: cpp.Star<cpp.Float32>): Void;
@@ -3370,7 +3370,7 @@ extern class Miniaudio {
     public static function ma_copy_and_apply_volume_and_clip_samples_f32(pDst: cpp.Star<cpp.Float32>, pSrc: cpp.Star<cpp.Float32>, count: cpp.UInt64, volume: cpp.Float32): Void;
 
     @:native("ma_copy_and_apply_volume_and_clip_pcm_frames")
-    public static function ma_copy_and_apply_volume_and_clip_pcm_frames(pDst: cpp.Star<Void>, pSrc: cpp.Star<Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, volume: cpp.Float32): Void;
+    public static function ma_copy_and_apply_volume_and_clip_pcm_frames(pDst: cpp.Star<cpp.Void>, pSrc: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, volume: cpp.Float32): Void;
 
     @:native("ma_volume_linear_to_db")
     public static function ma_volume_linear_to_db(factor: cpp.Float32): cpp.Float32;
@@ -3382,124 +3382,124 @@ extern class Miniaudio {
     public static function ma_mix_pcm_frames_f32(pDst: cpp.Star<cpp.Float32>, pSrc: cpp.Star<cpp.Float32>, frameCount: cpp.UInt64, channels: cpp.UInt32, volume: cpp.Float32): MaResult;
 
     @:native("ma_pcm_u8_to_u8")
-    public static function ma_pcm_u8_to_u8(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_u8_to_u8(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_u8_to_s16")
-    public static function ma_pcm_u8_to_s16(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_u8_to_s16(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_u8_to_s24")
-    public static function ma_pcm_u8_to_s24(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_u8_to_s24(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_u8_to_s32")
-    public static function ma_pcm_u8_to_s32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_u8_to_s32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_u8_to_f32")
-    public static function ma_pcm_u8_to_f32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_u8_to_f32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_interleave_u8")
-    public static function ma_pcm_interleave_u8(dst: cpp.Star<Void>, src: cpp.Star<cpp.Star<Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_interleave_u8(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Star<cpp.Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_deinterleave_u8")
-    public static function ma_pcm_deinterleave_u8(dst: cpp.Star<cpp.Star<Void>>, src: cpp.Star<Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_deinterleave_u8(dst: cpp.Star<cpp.Star<cpp.Void>>, src: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_s16_to_u8")
-    public static function ma_pcm_s16_to_u8(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s16_to_u8(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s16_to_s16")
-    public static function ma_pcm_s16_to_s16(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s16_to_s16(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s16_to_s24")
-    public static function ma_pcm_s16_to_s24(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s16_to_s24(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s16_to_s32")
-    public static function ma_pcm_s16_to_s32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s16_to_s32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s16_to_f32")
-    public static function ma_pcm_s16_to_f32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s16_to_f32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_interleave_s16")
-    public static function ma_pcm_interleave_s16(dst: cpp.Star<Void>, src: cpp.Star<cpp.Star<Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_interleave_s16(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Star<cpp.Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_deinterleave_s16")
-    public static function ma_pcm_deinterleave_s16(dst: cpp.Star<cpp.Star<Void>>, src: cpp.Star<Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_deinterleave_s16(dst: cpp.Star<cpp.Star<cpp.Void>>, src: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_s24_to_u8")
-    public static function ma_pcm_s24_to_u8(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s24_to_u8(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s24_to_s16")
-    public static function ma_pcm_s24_to_s16(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s24_to_s16(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s24_to_s24")
-    public static function ma_pcm_s24_to_s24(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s24_to_s24(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s24_to_s32")
-    public static function ma_pcm_s24_to_s32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s24_to_s32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s24_to_f32")
-    public static function ma_pcm_s24_to_f32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s24_to_f32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_interleave_s24")
-    public static function ma_pcm_interleave_s24(dst: cpp.Star<Void>, src: cpp.Star<cpp.Star<Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_interleave_s24(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Star<cpp.Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_deinterleave_s24")
-    public static function ma_pcm_deinterleave_s24(dst: cpp.Star<cpp.Star<Void>>, src: cpp.Star<Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_deinterleave_s24(dst: cpp.Star<cpp.Star<cpp.Void>>, src: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_s32_to_u8")
-    public static function ma_pcm_s32_to_u8(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s32_to_u8(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s32_to_s16")
-    public static function ma_pcm_s32_to_s16(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s32_to_s16(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s32_to_s24")
-    public static function ma_pcm_s32_to_s24(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s32_to_s24(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s32_to_s32")
-    public static function ma_pcm_s32_to_s32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s32_to_s32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_s32_to_f32")
-    public static function ma_pcm_s32_to_f32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_s32_to_f32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_interleave_s32")
-    public static function ma_pcm_interleave_s32(dst: cpp.Star<Void>, src: cpp.Star<cpp.Star<Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_interleave_s32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Star<cpp.Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_deinterleave_s32")
-    public static function ma_pcm_deinterleave_s32(dst: cpp.Star<cpp.Star<Void>>, src: cpp.Star<Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_deinterleave_s32(dst: cpp.Star<cpp.Star<cpp.Void>>, src: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_f32_to_u8")
-    public static function ma_pcm_f32_to_u8(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_f32_to_u8(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_f32_to_s16")
-    public static function ma_pcm_f32_to_s16(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_f32_to_s16(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_f32_to_s24")
-    public static function ma_pcm_f32_to_s24(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_f32_to_s24(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_f32_to_s32")
-    public static function ma_pcm_f32_to_s32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_f32_to_s32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_f32_to_f32")
-    public static function ma_pcm_f32_to_f32(dst: cpp.Star<Void>, src: cpp.Star<Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_f32_to_f32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Void>, count: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_pcm_interleave_f32")
-    public static function ma_pcm_interleave_f32(dst: cpp.Star<Void>, src: cpp.Star<cpp.Star<Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_interleave_f32(dst: cpp.Star<cpp.Void>, src: cpp.Star<cpp.Star<cpp.Void>>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_deinterleave_f32")
-    public static function ma_pcm_deinterleave_f32(dst: cpp.Star<cpp.Star<Void>>, src: cpp.Star<Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
+    public static function ma_pcm_deinterleave_f32(dst: cpp.Star<cpp.Star<cpp.Void>>, src: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, channels: cpp.UInt32): Void;
 
     @:native("ma_pcm_convert")
-    public static function ma_pcm_convert(pOut: cpp.Star<Void>, formatOut: MaFormat, pIn: cpp.Star<Void>, formatIn: MaFormat, sampleCount: cpp.UInt64, ditherMode: MaDitherMode): Void;
+    public static function ma_pcm_convert(pOut: cpp.Star<cpp.Void>, formatOut: MaFormat, pIn: cpp.Star<cpp.Void>, formatIn: MaFormat, sampleCount: cpp.UInt64, ditherMode: MaDitherMode): Void;
 
     @:native("ma_convert_pcm_frames_format")
-    public static function ma_convert_pcm_frames_format(pOut: cpp.Star<Void>, formatOut: MaFormat, pIn: cpp.Star<Void>, formatIn: MaFormat, frameCount: cpp.UInt64, channels: cpp.UInt32, ditherMode: MaDitherMode): Void;
+    public static function ma_convert_pcm_frames_format(pOut: cpp.Star<cpp.Void>, formatOut: MaFormat, pIn: cpp.Star<cpp.Void>, formatIn: MaFormat, frameCount: cpp.UInt64, channels: cpp.UInt32, ditherMode: MaDitherMode): Void;
 
     @:native("ma_deinterleave_pcm_frames")
-    public static function ma_deinterleave_pcm_frames(format: MaFormat, channels: cpp.UInt32, frameCount: cpp.UInt64, pInterleavedPCMFrames: cpp.Star<Void>, ppDeinterleavedPCMFrames: cpp.Star<cpp.Star<Void>>): Void;
+    public static function ma_deinterleave_pcm_frames(format: MaFormat, channels: cpp.UInt32, frameCount: cpp.UInt64, pInterleavedPCMFrames: cpp.Star<cpp.Void>, ppDeinterleavedPCMFrames: cpp.Star<cpp.Star<cpp.Void>>): Void;
 
     @:native("ma_interleave_pcm_frames")
-    public static function ma_interleave_pcm_frames(format: MaFormat, channels: cpp.UInt32, frameCount: cpp.UInt64, ppDeinterleavedPCMFrames: cpp.Star<cpp.Star<Void>>, pInterleavedPCMFrames: cpp.Star<Void>): Void;
+    public static function ma_interleave_pcm_frames(format: MaFormat, channels: cpp.UInt32, frameCount: cpp.UInt64, ppDeinterleavedPCMFrames: cpp.Star<cpp.Star<cpp.Void>>, pInterleavedPCMFrames: cpp.Star<cpp.Void>): Void;
 
     @:native("ma_biquad_init_preallocated")
-    public static function ma_biquad_init_preallocated(pConfig: cpp.Star<MaBiquadConfig>, pHeap: cpp.Star<Void>, pBQ: cpp.Star<MaBiquad>): MaResult;
+    public static function ma_biquad_init_preallocated(pConfig: cpp.Star<MaBiquadConfig>, pHeap: cpp.Star<cpp.Void>, pBQ: cpp.Star<MaBiquad>): MaResult;
 
     @:native("ma_biquad_init")
     public static function ma_biquad_init(pConfig: cpp.Star<MaBiquadConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pBQ: cpp.Star<MaBiquad>): MaResult;
@@ -3514,7 +3514,7 @@ extern class Miniaudio {
     public static function ma_biquad_clear_cache(pBQ: cpp.Star<MaBiquad>): MaResult;
 
     @:native("ma_biquad_process_pcm_frames")
-    public static function ma_biquad_process_pcm_frames(pBQ: cpp.Star<MaBiquad>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_biquad_process_pcm_frames(pBQ: cpp.Star<MaBiquad>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_biquad_get_latency")
     public static function ma_biquad_get_latency(pBQ: cpp.Star<MaBiquad>): cpp.UInt32;
@@ -3523,7 +3523,7 @@ extern class Miniaudio {
     public static function ma_lpf2_config_init(format: MaFormat, channels: cpp.UInt32, sampleRate: cpp.UInt32, cutoffFrequency: cpp.Float64, q: cpp.Float64): MaLpf2Config;
 
     @:native("ma_lpf1_init_preallocated")
-    public static function ma_lpf1_init_preallocated(pConfig: cpp.Star<MaLpf1Config>, pHeap: cpp.Star<Void>, pLPF: cpp.Star<MaLpf1>): MaResult;
+    public static function ma_lpf1_init_preallocated(pConfig: cpp.Star<MaLpf1Config>, pHeap: cpp.Star<cpp.Void>, pLPF: cpp.Star<MaLpf1>): MaResult;
 
     @:native("ma_lpf1_init")
     public static function ma_lpf1_init(pConfig: cpp.Star<MaLpf1Config>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pLPF: cpp.Star<MaLpf1>): MaResult;
@@ -3538,13 +3538,13 @@ extern class Miniaudio {
     public static function ma_lpf1_clear_cache(pLPF: cpp.Star<MaLpf1>): MaResult;
 
     @:native("ma_lpf1_process_pcm_frames")
-    public static function ma_lpf1_process_pcm_frames(pLPF: cpp.Star<MaLpf1>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_lpf1_process_pcm_frames(pLPF: cpp.Star<MaLpf1>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_lpf1_get_latency")
     public static function ma_lpf1_get_latency(pLPF: cpp.Star<MaLpf1>): cpp.UInt32;
 
     @:native("ma_lpf2_init_preallocated")
-    public static function ma_lpf2_init_preallocated(pConfig: cpp.Star<MaLpf2Config>, pHeap: cpp.Star<Void>, pLPF: cpp.Star<MaLpf2>): MaResult;
+    public static function ma_lpf2_init_preallocated(pConfig: cpp.Star<MaLpf2Config>, pHeap: cpp.Star<cpp.Void>, pLPF: cpp.Star<MaLpf2>): MaResult;
 
     @:native("ma_lpf2_init")
     public static function ma_lpf2_init(pConfig: cpp.Star<MaLpf2Config>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pLPF: cpp.Star<MaLpf2>): MaResult;
@@ -3559,13 +3559,13 @@ extern class Miniaudio {
     public static function ma_lpf2_clear_cache(pLPF: cpp.Star<MaLpf2>): MaResult;
 
     @:native("ma_lpf2_process_pcm_frames")
-    public static function ma_lpf2_process_pcm_frames(pLPF: cpp.Star<MaLpf2>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_lpf2_process_pcm_frames(pLPF: cpp.Star<MaLpf2>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_lpf2_get_latency")
     public static function ma_lpf2_get_latency(pLPF: cpp.Star<MaLpf2>): cpp.UInt32;
 
     @:native("ma_lpf_init_preallocated")
-    public static function ma_lpf_init_preallocated(pConfig: cpp.Star<MaLpfConfig>, pHeap: cpp.Star<Void>, pLPF: cpp.Star<MaLpf>): MaResult;
+    public static function ma_lpf_init_preallocated(pConfig: cpp.Star<MaLpfConfig>, pHeap: cpp.Star<cpp.Void>, pLPF: cpp.Star<MaLpf>): MaResult;
 
     @:native("ma_lpf_init")
     public static function ma_lpf_init(pConfig: cpp.Star<MaLpfConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pLPF: cpp.Star<MaLpf>): MaResult;
@@ -3580,7 +3580,7 @@ extern class Miniaudio {
     public static function ma_lpf_clear_cache(pLPF: cpp.Star<MaLpf>): MaResult;
 
     @:native("ma_lpf_process_pcm_frames")
-    public static function ma_lpf_process_pcm_frames(pLPF: cpp.Star<MaLpf>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_lpf_process_pcm_frames(pLPF: cpp.Star<MaLpf>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_lpf_get_latency")
     public static function ma_lpf_get_latency(pLPF: cpp.Star<MaLpf>): cpp.UInt32;
@@ -3589,7 +3589,7 @@ extern class Miniaudio {
     public static function ma_hpf2_config_init(format: MaFormat, channels: cpp.UInt32, sampleRate: cpp.UInt32, cutoffFrequency: cpp.Float64, q: cpp.Float64): MaHpf2Config;
 
     @:native("ma_hpf1_init_preallocated")
-    public static function ma_hpf1_init_preallocated(pConfig: cpp.Star<MaHpf1Config>, pHeap: cpp.Star<Void>, pLPF: cpp.Star<MaHpf1>): MaResult;
+    public static function ma_hpf1_init_preallocated(pConfig: cpp.Star<MaHpf1Config>, pHeap: cpp.Star<cpp.Void>, pLPF: cpp.Star<MaHpf1>): MaResult;
 
     @:native("ma_hpf1_init")
     public static function ma_hpf1_init(pConfig: cpp.Star<MaHpf1Config>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pLPF: cpp.Star<MaHpf1>): MaResult;
@@ -3601,13 +3601,13 @@ extern class Miniaudio {
     public static function ma_hpf1_reinit(pConfig: cpp.Star<MaHpf1Config>, pHPF: cpp.Star<MaHpf1>): MaResult;
 
     @:native("ma_hpf1_process_pcm_frames")
-    public static function ma_hpf1_process_pcm_frames(pHPF: cpp.Star<MaHpf1>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_hpf1_process_pcm_frames(pHPF: cpp.Star<MaHpf1>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_hpf1_get_latency")
     public static function ma_hpf1_get_latency(pHPF: cpp.Star<MaHpf1>): cpp.UInt32;
 
     @:native("ma_hpf2_init_preallocated")
-    public static function ma_hpf2_init_preallocated(pConfig: cpp.Star<MaHpf2Config>, pHeap: cpp.Star<Void>, pHPF: cpp.Star<MaHpf2>): MaResult;
+    public static function ma_hpf2_init_preallocated(pConfig: cpp.Star<MaHpf2Config>, pHeap: cpp.Star<cpp.Void>, pHPF: cpp.Star<MaHpf2>): MaResult;
 
     @:native("ma_hpf2_init")
     public static function ma_hpf2_init(pConfig: cpp.Star<MaHpf2Config>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pHPF: cpp.Star<MaHpf2>): MaResult;
@@ -3619,13 +3619,13 @@ extern class Miniaudio {
     public static function ma_hpf2_reinit(pConfig: cpp.Star<MaHpf2Config>, pHPF: cpp.Star<MaHpf2>): MaResult;
 
     @:native("ma_hpf2_process_pcm_frames")
-    public static function ma_hpf2_process_pcm_frames(pHPF: cpp.Star<MaHpf2>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_hpf2_process_pcm_frames(pHPF: cpp.Star<MaHpf2>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_hpf2_get_latency")
     public static function ma_hpf2_get_latency(pHPF: cpp.Star<MaHpf2>): cpp.UInt32;
 
     @:native("ma_hpf_init_preallocated")
-    public static function ma_hpf_init_preallocated(pConfig: cpp.Star<MaHpfConfig>, pHeap: cpp.Star<Void>, pLPF: cpp.Star<MaHpf>): MaResult;
+    public static function ma_hpf_init_preallocated(pConfig: cpp.Star<MaHpfConfig>, pHeap: cpp.Star<cpp.Void>, pLPF: cpp.Star<MaHpf>): MaResult;
 
     @:native("ma_hpf_init")
     public static function ma_hpf_init(pConfig: cpp.Star<MaHpfConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pHPF: cpp.Star<MaHpf>): MaResult;
@@ -3637,13 +3637,13 @@ extern class Miniaudio {
     public static function ma_hpf_reinit(pConfig: cpp.Star<MaHpfConfig>, pHPF: cpp.Star<MaHpf>): MaResult;
 
     @:native("ma_hpf_process_pcm_frames")
-    public static function ma_hpf_process_pcm_frames(pHPF: cpp.Star<MaHpf>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_hpf_process_pcm_frames(pHPF: cpp.Star<MaHpf>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_hpf_get_latency")
     public static function ma_hpf_get_latency(pHPF: cpp.Star<MaHpf>): cpp.UInt32;
 
     @:native("ma_bpf2_init_preallocated")
-    public static function ma_bpf2_init_preallocated(pConfig: cpp.Star<MaBpf2Config>, pHeap: cpp.Star<Void>, pBPF: cpp.Star<MaBpf2>): MaResult;
+    public static function ma_bpf2_init_preallocated(pConfig: cpp.Star<MaBpf2Config>, pHeap: cpp.Star<cpp.Void>, pBPF: cpp.Star<MaBpf2>): MaResult;
 
     @:native("ma_bpf2_init")
     public static function ma_bpf2_init(pConfig: cpp.Star<MaBpf2Config>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pBPF: cpp.Star<MaBpf2>): MaResult;
@@ -3655,13 +3655,13 @@ extern class Miniaudio {
     public static function ma_bpf2_reinit(pConfig: cpp.Star<MaBpf2Config>, pBPF: cpp.Star<MaBpf2>): MaResult;
 
     @:native("ma_bpf2_process_pcm_frames")
-    public static function ma_bpf2_process_pcm_frames(pBPF: cpp.Star<MaBpf2>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_bpf2_process_pcm_frames(pBPF: cpp.Star<MaBpf2>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_bpf2_get_latency")
     public static function ma_bpf2_get_latency(pBPF: cpp.Star<MaBpf2>): cpp.UInt32;
 
     @:native("ma_bpf_init_preallocated")
-    public static function ma_bpf_init_preallocated(pConfig: cpp.Star<MaBpfConfig>, pHeap: cpp.Star<Void>, pBPF: cpp.Star<MaBpf>): MaResult;
+    public static function ma_bpf_init_preallocated(pConfig: cpp.Star<MaBpfConfig>, pHeap: cpp.Star<cpp.Void>, pBPF: cpp.Star<MaBpf>): MaResult;
 
     @:native("ma_bpf_init")
     public static function ma_bpf_init(pConfig: cpp.Star<MaBpfConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pBPF: cpp.Star<MaBpf>): MaResult;
@@ -3673,13 +3673,13 @@ extern class Miniaudio {
     public static function ma_bpf_reinit(pConfig: cpp.Star<MaBpfConfig>, pBPF: cpp.Star<MaBpf>): MaResult;
 
     @:native("ma_bpf_process_pcm_frames")
-    public static function ma_bpf_process_pcm_frames(pBPF: cpp.Star<MaBpf>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_bpf_process_pcm_frames(pBPF: cpp.Star<MaBpf>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_bpf_get_latency")
     public static function ma_bpf_get_latency(pBPF: cpp.Star<MaBpf>): cpp.UInt32;
 
     @:native("ma_notch2_init_preallocated")
-    public static function ma_notch2_init_preallocated(pConfig: cpp.Star<MaNotch2Config>, pHeap: cpp.Star<Void>, pFilter: cpp.Star<MaNotch2>): MaResult;
+    public static function ma_notch2_init_preallocated(pConfig: cpp.Star<MaNotch2Config>, pHeap: cpp.Star<cpp.Void>, pFilter: cpp.Star<MaNotch2>): MaResult;
 
     @:native("ma_notch2_init")
     public static function ma_notch2_init(pConfig: cpp.Star<MaNotch2Config>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFilter: cpp.Star<MaNotch2>): MaResult;
@@ -3691,13 +3691,13 @@ extern class Miniaudio {
     public static function ma_notch2_reinit(pConfig: cpp.Star<MaNotch2Config>, pFilter: cpp.Star<MaNotch2>): MaResult;
 
     @:native("ma_notch2_process_pcm_frames")
-    public static function ma_notch2_process_pcm_frames(pFilter: cpp.Star<MaNotch2>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_notch2_process_pcm_frames(pFilter: cpp.Star<MaNotch2>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_notch2_get_latency")
     public static function ma_notch2_get_latency(pFilter: cpp.Star<MaNotch2>): cpp.UInt32;
 
     @:native("ma_peak2_init_preallocated")
-    public static function ma_peak2_init_preallocated(pConfig: cpp.Star<MaPeak2Config>, pHeap: cpp.Star<Void>, pFilter: cpp.Star<MaPeak2>): MaResult;
+    public static function ma_peak2_init_preallocated(pConfig: cpp.Star<MaPeak2Config>, pHeap: cpp.Star<cpp.Void>, pFilter: cpp.Star<MaPeak2>): MaResult;
 
     @:native("ma_peak2_init")
     public static function ma_peak2_init(pConfig: cpp.Star<MaPeak2Config>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFilter: cpp.Star<MaPeak2>): MaResult;
@@ -3709,13 +3709,13 @@ extern class Miniaudio {
     public static function ma_peak2_reinit(pConfig: cpp.Star<MaPeak2Config>, pFilter: cpp.Star<MaPeak2>): MaResult;
 
     @:native("ma_peak2_process_pcm_frames")
-    public static function ma_peak2_process_pcm_frames(pFilter: cpp.Star<MaPeak2>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_peak2_process_pcm_frames(pFilter: cpp.Star<MaPeak2>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_peak2_get_latency")
     public static function ma_peak2_get_latency(pFilter: cpp.Star<MaPeak2>): cpp.UInt32;
 
     @:native("ma_loshelf2_init_preallocated")
-    public static function ma_loshelf2_init_preallocated(pConfig: cpp.Star<MaLoshelf2Config>, pHeap: cpp.Star<Void>, pFilter: cpp.Star<MaLoshelf2>): MaResult;
+    public static function ma_loshelf2_init_preallocated(pConfig: cpp.Star<MaLoshelf2Config>, pHeap: cpp.Star<cpp.Void>, pFilter: cpp.Star<MaLoshelf2>): MaResult;
 
     @:native("ma_loshelf2_init")
     public static function ma_loshelf2_init(pConfig: cpp.Star<MaLoshelf2Config>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFilter: cpp.Star<MaLoshelf2>): MaResult;
@@ -3727,13 +3727,13 @@ extern class Miniaudio {
     public static function ma_loshelf2_reinit(pConfig: cpp.Star<MaLoshelf2Config>, pFilter: cpp.Star<MaLoshelf2>): MaResult;
 
     @:native("ma_loshelf2_process_pcm_frames")
-    public static function ma_loshelf2_process_pcm_frames(pFilter: cpp.Star<MaLoshelf2>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_loshelf2_process_pcm_frames(pFilter: cpp.Star<MaLoshelf2>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_loshelf2_get_latency")
     public static function ma_loshelf2_get_latency(pFilter: cpp.Star<MaLoshelf2>): cpp.UInt32;
 
     @:native("ma_hishelf2_init_preallocated")
-    public static function ma_hishelf2_init_preallocated(pConfig: cpp.Star<MaHishelf2Config>, pHeap: cpp.Star<Void>, pFilter: cpp.Star<MaHishelf2>): MaResult;
+    public static function ma_hishelf2_init_preallocated(pConfig: cpp.Star<MaHishelf2Config>, pHeap: cpp.Star<cpp.Void>, pFilter: cpp.Star<MaHishelf2>): MaResult;
 
     @:native("ma_hishelf2_init")
     public static function ma_hishelf2_init(pConfig: cpp.Star<MaHishelf2Config>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFilter: cpp.Star<MaHishelf2>): MaResult;
@@ -3745,7 +3745,7 @@ extern class Miniaudio {
     public static function ma_hishelf2_reinit(pConfig: cpp.Star<MaHishelf2Config>, pFilter: cpp.Star<MaHishelf2>): MaResult;
 
     @:native("ma_hishelf2_process_pcm_frames")
-    public static function ma_hishelf2_process_pcm_frames(pFilter: cpp.Star<MaHishelf2>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_hishelf2_process_pcm_frames(pFilter: cpp.Star<MaHishelf2>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_hishelf2_get_latency")
     public static function ma_hishelf2_get_latency(pFilter: cpp.Star<MaHishelf2>): cpp.UInt32;
@@ -3754,7 +3754,7 @@ extern class Miniaudio {
     public static function ma_delay_uninit(pDelay: cpp.Star<MaDelay>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_delay_process_pcm_frames")
-    public static function ma_delay_process_pcm_frames(pDelay: cpp.Star<MaDelay>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt32): MaResult;
+    public static function ma_delay_process_pcm_frames(pDelay: cpp.Star<MaDelay>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt32): MaResult;
 
     @:native("ma_delay_set_wet")
     public static function ma_delay_set_wet(pDelay: cpp.Star<MaDelay>, value: cpp.Float32): Void;
@@ -3775,7 +3775,7 @@ extern class Miniaudio {
     public static function ma_delay_get_decay(pDelay: cpp.Star<MaDelay>): cpp.Float32;
 
     @:native("ma_gainer_init_preallocated")
-    public static function ma_gainer_init_preallocated(pConfig: cpp.Star<MaGainerConfig>, pHeap: cpp.Star<Void>, pGainer: cpp.Star<MaGainer>): MaResult;
+    public static function ma_gainer_init_preallocated(pConfig: cpp.Star<MaGainerConfig>, pHeap: cpp.Star<cpp.Void>, pGainer: cpp.Star<MaGainer>): MaResult;
 
     @:native("ma_gainer_init")
     public static function ma_gainer_init(pConfig: cpp.Star<MaGainerConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pGainer: cpp.Star<MaGainer>): MaResult;
@@ -3784,7 +3784,7 @@ extern class Miniaudio {
     public static function ma_gainer_uninit(pGainer: cpp.Star<MaGainer>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_gainer_process_pcm_frames")
-    public static function ma_gainer_process_pcm_frames(pGainer: cpp.Star<MaGainer>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_gainer_process_pcm_frames(pGainer: cpp.Star<MaGainer>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_gainer_set_gain")
     public static function ma_gainer_set_gain(pGainer: cpp.Star<MaGainer>, newGain: cpp.Float32): MaResult;
@@ -3799,7 +3799,7 @@ extern class Miniaudio {
     public static function ma_gainer_get_master_volume(pGainer: cpp.Star<MaGainer>, pVolume: cpp.Star<cpp.Float32>): MaResult;
 
     @:native("ma_panner_process_pcm_frames")
-    public static function ma_panner_process_pcm_frames(pPanner: cpp.Star<MaPanner>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_panner_process_pcm_frames(pPanner: cpp.Star<MaPanner>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_panner_set_mode")
     public static function ma_panner_set_mode(pPanner: cpp.Star<MaPanner>, mode: MaPanMode): Void;
@@ -3814,7 +3814,7 @@ extern class Miniaudio {
     public static function ma_panner_get_pan(pPanner: cpp.Star<MaPanner>): cpp.Float32;
 
     @:native("ma_fader_process_pcm_frames")
-    public static function ma_fader_process_pcm_frames(pFader: cpp.Star<MaFader>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_fader_process_pcm_frames(pFader: cpp.Star<MaFader>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_fader_get_data_format")
     public static function ma_fader_get_data_format(pFader: cpp.Star<MaFader>, pFormat: cpp.Star<MaFormat>, pChannels: cpp.Star<cpp.UInt32>, pSampleRate: cpp.Star<cpp.UInt32>): Void;
@@ -3865,7 +3865,7 @@ extern class Miniaudio {
     public static function ma_atomic_vec3f_get(v: cpp.Star<MaAtomicVec3f>): MaVec3f;
 
     @:native("ma_spatializer_listener_init_preallocated")
-    public static function ma_spatializer_listener_init_preallocated(pConfig: cpp.Star<MaSpatializerListenerConfig>, pHeap: cpp.Star<Void>, pListener: cpp.Star<MaSpatializerListener>): MaResult;
+    public static function ma_spatializer_listener_init_preallocated(pConfig: cpp.Star<MaSpatializerListenerConfig>, pHeap: cpp.Star<cpp.Void>, pListener: cpp.Star<MaSpatializerListener>): MaResult;
 
     @:native("ma_spatializer_listener_init")
     public static function ma_spatializer_listener_init(pConfig: cpp.Star<MaSpatializerListenerConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pListener: cpp.Star<MaSpatializerListener>): MaResult;
@@ -3919,7 +3919,7 @@ extern class Miniaudio {
     public static function ma_spatializer_listener_is_enabled(pListener: cpp.Star<MaSpatializerListener>): cpp.UInt32;
 
     @:native("ma_spatializer_init_preallocated")
-    public static function ma_spatializer_init_preallocated(pConfig: cpp.Star<MaSpatializerConfig>, pHeap: cpp.Star<Void>, pSpatializer: cpp.Star<MaSpatializer>): MaResult;
+    public static function ma_spatializer_init_preallocated(pConfig: cpp.Star<MaSpatializerConfig>, pHeap: cpp.Star<cpp.Void>, pSpatializer: cpp.Star<MaSpatializer>): MaResult;
 
     @:native("ma_spatializer_init")
     public static function ma_spatializer_init(pConfig: cpp.Star<MaSpatializerConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pSpatializer: cpp.Star<MaSpatializer>): MaResult;
@@ -3928,7 +3928,7 @@ extern class Miniaudio {
     public static function ma_spatializer_uninit(pSpatializer: cpp.Star<MaSpatializer>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_spatializer_process_pcm_frames")
-    public static function ma_spatializer_process_pcm_frames(pSpatializer: cpp.Star<MaSpatializer>, pListener: cpp.Star<MaSpatializerListener>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_spatializer_process_pcm_frames(pSpatializer: cpp.Star<MaSpatializer>, pListener: cpp.Star<MaSpatializerListener>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_spatializer_set_master_volume")
     public static function ma_spatializer_set_master_volume(pSpatializer: cpp.Star<MaSpatializer>, volume: cpp.Float32): MaResult;
@@ -4024,7 +4024,7 @@ extern class Miniaudio {
     public static function ma_spatializer_get_relative_position_and_direction(pSpatializer: cpp.Star<MaSpatializer>, pListener: cpp.Star<MaSpatializerListener>, pRelativePos: cpp.Star<MaVec3f>, pRelativeDir: cpp.Star<MaVec3f>): Void;
 
     @:native("ma_linear_resampler_init_preallocated")
-    public static function ma_linear_resampler_init_preallocated(pConfig: cpp.Star<MaLinearResamplerConfig>, pHeap: cpp.Star<Void>, pResampler: cpp.Star<MaLinearResampler>): MaResult;
+    public static function ma_linear_resampler_init_preallocated(pConfig: cpp.Star<MaLinearResamplerConfig>, pHeap: cpp.Star<cpp.Void>, pResampler: cpp.Star<MaLinearResampler>): MaResult;
 
     @:native("ma_linear_resampler_init")
     public static function ma_linear_resampler_init(pConfig: cpp.Star<MaLinearResamplerConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pResampler: cpp.Star<MaLinearResampler>): MaResult;
@@ -4033,7 +4033,7 @@ extern class Miniaudio {
     public static function ma_linear_resampler_uninit(pResampler: cpp.Star<MaLinearResampler>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_linear_resampler_process_pcm_frames")
-    public static function ma_linear_resampler_process_pcm_frames(pResampler: cpp.Star<MaLinearResampler>, pFramesIn: cpp.Star<Void>, pFrameCountIn: cpp.Star<cpp.UInt64>, pFramesOut: cpp.Star<Void>, pFrameCountOut: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_linear_resampler_process_pcm_frames(pResampler: cpp.Star<MaLinearResampler>, pFramesIn: cpp.Star<cpp.Void>, pFrameCountIn: cpp.Star<cpp.UInt64>, pFramesOut: cpp.Star<cpp.Void>, pFrameCountOut: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_linear_resampler_set_rate")
     public static function ma_linear_resampler_set_rate(pResampler: cpp.Star<MaLinearResampler>, sampleRateIn: cpp.UInt32, sampleRateOut: cpp.UInt32): MaResult;
@@ -4057,7 +4057,7 @@ extern class Miniaudio {
     public static function ma_linear_resampler_reset(pResampler: cpp.Star<MaLinearResampler>): MaResult;
 
     @:native("ma_resampler_init_preallocated")
-    public static function ma_resampler_init_preallocated(pConfig: cpp.Star<MaResamplerConfig>, pHeap: cpp.Star<Void>, pResampler: cpp.Star<MaResampler>): MaResult;
+    public static function ma_resampler_init_preallocated(pConfig: cpp.Star<MaResamplerConfig>, pHeap: cpp.Star<cpp.Void>, pResampler: cpp.Star<MaResampler>): MaResult;
 
     @:native("ma_resampler_init")
     public static function ma_resampler_init(pConfig: cpp.Star<MaResamplerConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pResampler: cpp.Star<MaResampler>): MaResult;
@@ -4066,7 +4066,7 @@ extern class Miniaudio {
     public static function ma_resampler_uninit(pResampler: cpp.Star<MaResampler>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_resampler_process_pcm_frames")
-    public static function ma_resampler_process_pcm_frames(pResampler: cpp.Star<MaResampler>, pFramesIn: cpp.Star<Void>, pFrameCountIn: cpp.Star<cpp.UInt64>, pFramesOut: cpp.Star<Void>, pFrameCountOut: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_resampler_process_pcm_frames(pResampler: cpp.Star<MaResampler>, pFramesIn: cpp.Star<cpp.Void>, pFrameCountIn: cpp.Star<cpp.UInt64>, pFramesOut: cpp.Star<cpp.Void>, pFrameCountOut: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_resampler_set_rate")
     public static function ma_resampler_set_rate(pResampler: cpp.Star<MaResampler>, sampleRateIn: cpp.UInt32, sampleRateOut: cpp.UInt32): MaResult;
@@ -4090,7 +4090,7 @@ extern class Miniaudio {
     public static function ma_resampler_reset(pResampler: cpp.Star<MaResampler>): MaResult;
 
     @:native("ma_channel_converter_init_preallocated")
-    public static function ma_channel_converter_init_preallocated(pConfig: cpp.Star<MaChannelConverterConfig>, pHeap: cpp.Star<Void>, pConverter: cpp.Star<MaChannelConverter>): MaResult;
+    public static function ma_channel_converter_init_preallocated(pConfig: cpp.Star<MaChannelConverterConfig>, pHeap: cpp.Star<cpp.Void>, pConverter: cpp.Star<MaChannelConverter>): MaResult;
 
     @:native("ma_channel_converter_init")
     public static function ma_channel_converter_init(pConfig: cpp.Star<MaChannelConverterConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pConverter: cpp.Star<MaChannelConverter>): MaResult;
@@ -4099,7 +4099,7 @@ extern class Miniaudio {
     public static function ma_channel_converter_uninit(pConverter: cpp.Star<MaChannelConverter>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_channel_converter_process_pcm_frames")
-    public static function ma_channel_converter_process_pcm_frames(pConverter: cpp.Star<MaChannelConverter>, pFramesOut: cpp.Star<Void>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64): MaResult;
+    public static function ma_channel_converter_process_pcm_frames(pConverter: cpp.Star<MaChannelConverter>, pFramesOut: cpp.Star<cpp.Void>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64): MaResult;
 
     @:native("ma_channel_converter_get_input_channel_map")
     public static function ma_channel_converter_get_input_channel_map(pConverter: cpp.Star<MaChannelConverter>, pChannelMap: cpp.Star<MaChannel>, channelMapCap: cpp.SizeT): MaResult;
@@ -4111,7 +4111,7 @@ extern class Miniaudio {
     public static function ma_data_converter_config_init(formatIn: MaFormat, formatOut: MaFormat, channelsIn: cpp.UInt32, channelsOut: cpp.UInt32, sampleRateIn: cpp.UInt32, sampleRateOut: cpp.UInt32): MaDataConverterConfig;
 
     @:native("ma_data_converter_init_preallocated")
-    public static function ma_data_converter_init_preallocated(pConfig: cpp.Star<MaDataConverterConfig>, pHeap: cpp.Star<Void>, pConverter: cpp.Star<MaDataConverter>): MaResult;
+    public static function ma_data_converter_init_preallocated(pConfig: cpp.Star<MaDataConverterConfig>, pHeap: cpp.Star<cpp.Void>, pConverter: cpp.Star<MaDataConverter>): MaResult;
 
     @:native("ma_data_converter_init")
     public static function ma_data_converter_init(pConfig: cpp.Star<MaDataConverterConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pConverter: cpp.Star<MaDataConverter>): MaResult;
@@ -4120,7 +4120,7 @@ extern class Miniaudio {
     public static function ma_data_converter_uninit(pConverter: cpp.Star<MaDataConverter>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_data_converter_process_pcm_frames")
-    public static function ma_data_converter_process_pcm_frames(pConverter: cpp.Star<MaDataConverter>, pFramesIn: cpp.Star<Void>, pFrameCountIn: cpp.Star<cpp.UInt64>, pFramesOut: cpp.Star<Void>, pFrameCountOut: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_data_converter_process_pcm_frames(pConverter: cpp.Star<MaDataConverter>, pFramesIn: cpp.Star<cpp.Void>, pFrameCountIn: cpp.Star<cpp.UInt64>, pFramesOut: cpp.Star<cpp.Void>, pFrameCountOut: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_data_converter_set_rate")
     public static function ma_data_converter_set_rate(pConverter: cpp.Star<MaDataConverter>, sampleRateIn: cpp.UInt32, sampleRateOut: cpp.UInt32): MaResult;
@@ -4183,13 +4183,13 @@ extern class Miniaudio {
     public static function ma_channel_map_to_string(pChannelMap: cpp.Star<MaChannel>, channels: cpp.UInt32, pBufferOut: cpp.ConstCharStar, bufferCap: cpp.SizeT): cpp.SizeT;
 
     @:native("ma_convert_frames")
-    public static function ma_convert_frames(pOut: cpp.Star<Void>, frameCountOut: cpp.UInt64, formatOut: MaFormat, channelsOut: cpp.UInt32, sampleRateOut: cpp.UInt32, pIn: cpp.Star<Void>, frameCountIn: cpp.UInt64, formatIn: MaFormat, channelsIn: cpp.UInt32, sampleRateIn: cpp.UInt32): cpp.UInt64;
+    public static function ma_convert_frames(pOut: cpp.Star<cpp.Void>, frameCountOut: cpp.UInt64, formatOut: MaFormat, channelsOut: cpp.UInt32, sampleRateOut: cpp.UInt32, pIn: cpp.Star<cpp.Void>, frameCountIn: cpp.UInt64, formatIn: MaFormat, channelsIn: cpp.UInt32, sampleRateIn: cpp.UInt32): cpp.UInt64;
 
     @:native("ma_convert_frames_ex")
-    public static function ma_convert_frames_ex(pOut: cpp.Star<Void>, frameCountOut: cpp.UInt64, pIn: cpp.Star<Void>, frameCountIn: cpp.UInt64, pConfig: cpp.Star<MaDataConverterConfig>): cpp.UInt64;
+    public static function ma_convert_frames_ex(pOut: cpp.Star<cpp.Void>, frameCountOut: cpp.UInt64, pIn: cpp.Star<cpp.Void>, frameCountIn: cpp.UInt64, pConfig: cpp.Star<MaDataConverterConfig>): cpp.UInt64;
 
     @:native("ma_rb_init")
-    public static function ma_rb_init(bufferSizeInBytes: cpp.SizeT, pOptionalPreallocatedBuffer: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pRB: cpp.Star<MaRb>): MaResult;
+    public static function ma_rb_init(bufferSizeInBytes: cpp.SizeT, pOptionalPreallocatedBuffer: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pRB: cpp.Star<MaRb>): MaResult;
 
     @:native("ma_rb_uninit")
     public static function ma_rb_uninit(pRB: cpp.Star<MaRb>): Void;
@@ -4198,13 +4198,13 @@ extern class Miniaudio {
     public static function ma_rb_reset(pRB: cpp.Star<MaRb>): Void;
 
     @:native("ma_rb_acquire_read")
-    public static function ma_rb_acquire_read(pRB: cpp.Star<MaRb>, pSizeInBytes: cpp.Star<cpp.SizeT>, ppBufferOut: cpp.Star<cpp.Star<Void>>): MaResult;
+    public static function ma_rb_acquire_read(pRB: cpp.Star<MaRb>, pSizeInBytes: cpp.Star<cpp.SizeT>, ppBufferOut: cpp.Star<cpp.Star<cpp.Void>>): MaResult;
 
     @:native("ma_rb_commit_read")
     public static function ma_rb_commit_read(pRB: cpp.Star<MaRb>, sizeInBytes: cpp.SizeT): MaResult;
 
     @:native("ma_rb_acquire_write")
-    public static function ma_rb_acquire_write(pRB: cpp.Star<MaRb>, pSizeInBytes: cpp.Star<cpp.SizeT>, ppBufferOut: cpp.Star<cpp.Star<Void>>): MaResult;
+    public static function ma_rb_acquire_write(pRB: cpp.Star<MaRb>, pSizeInBytes: cpp.Star<cpp.SizeT>, ppBufferOut: cpp.Star<cpp.Star<cpp.Void>>): MaResult;
 
     @:native("ma_rb_commit_write")
     public static function ma_rb_commit_write(pRB: cpp.Star<MaRb>, sizeInBytes: cpp.SizeT): MaResult;
@@ -4234,10 +4234,10 @@ extern class Miniaudio {
     public static function ma_rb_get_subbuffer_offset(pRB: cpp.Star<MaRb>, subbufferIndex: cpp.SizeT): cpp.SizeT;
 
     @:native("ma_rb_get_subbuffer_ptr")
-    public static function ma_rb_get_subbuffer_ptr(pRB: cpp.Star<MaRb>, subbufferIndex: cpp.SizeT, pBuffer: cpp.Star<Void>): cpp.Star<Void>;
+    public static function ma_rb_get_subbuffer_ptr(pRB: cpp.Star<MaRb>, subbufferIndex: cpp.SizeT, pBuffer: cpp.Star<cpp.Void>): cpp.Star<cpp.Void>;
 
     @:native("ma_pcm_rb_init")
-    public static function ma_pcm_rb_init(format: MaFormat, channels: cpp.UInt32, bufferSizeInFrames: cpp.UInt32, pOptionalPreallocatedBuffer: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pRB: cpp.Star<MaPcmRb>): MaResult;
+    public static function ma_pcm_rb_init(format: MaFormat, channels: cpp.UInt32, bufferSizeInFrames: cpp.UInt32, pOptionalPreallocatedBuffer: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pRB: cpp.Star<MaPcmRb>): MaResult;
 
     @:native("ma_pcm_rb_uninit")
     public static function ma_pcm_rb_uninit(pRB: cpp.Star<MaPcmRb>): Void;
@@ -4246,13 +4246,13 @@ extern class Miniaudio {
     public static function ma_pcm_rb_reset(pRB: cpp.Star<MaPcmRb>): Void;
 
     @:native("ma_pcm_rb_acquire_read")
-    public static function ma_pcm_rb_acquire_read(pRB: cpp.Star<MaPcmRb>, pSizeInFrames: cpp.Star<cpp.UInt32>, ppBufferOut: cpp.Star<cpp.Star<Void>>): MaResult;
+    public static function ma_pcm_rb_acquire_read(pRB: cpp.Star<MaPcmRb>, pSizeInFrames: cpp.Star<cpp.UInt32>, ppBufferOut: cpp.Star<cpp.Star<cpp.Void>>): MaResult;
 
     @:native("ma_pcm_rb_commit_read")
     public static function ma_pcm_rb_commit_read(pRB: cpp.Star<MaPcmRb>, sizeInFrames: cpp.UInt32): MaResult;
 
     @:native("ma_pcm_rb_acquire_write")
-    public static function ma_pcm_rb_acquire_write(pRB: cpp.Star<MaPcmRb>, pSizeInFrames: cpp.Star<cpp.UInt32>, ppBufferOut: cpp.Star<cpp.Star<Void>>): MaResult;
+    public static function ma_pcm_rb_acquire_write(pRB: cpp.Star<MaPcmRb>, pSizeInFrames: cpp.Star<cpp.UInt32>, ppBufferOut: cpp.Star<cpp.Star<cpp.Void>>): MaResult;
 
     @:native("ma_pcm_rb_commit_write")
     public static function ma_pcm_rb_commit_write(pRB: cpp.Star<MaPcmRb>, sizeInFrames: cpp.UInt32): MaResult;
@@ -4282,7 +4282,7 @@ extern class Miniaudio {
     public static function ma_pcm_rb_get_subbuffer_offset(pRB: cpp.Star<MaPcmRb>, subbufferIndex: cpp.UInt32): cpp.UInt32;
 
     @:native("ma_pcm_rb_get_subbuffer_ptr")
-    public static function ma_pcm_rb_get_subbuffer_ptr(pRB: cpp.Star<MaPcmRb>, subbufferIndex: cpp.UInt32, pBuffer: cpp.Star<Void>): cpp.Star<Void>;
+    public static function ma_pcm_rb_get_subbuffer_ptr(pRB: cpp.Star<MaPcmRb>, subbufferIndex: cpp.UInt32, pBuffer: cpp.Star<cpp.Void>): cpp.Star<cpp.Void>;
 
     @:native("ma_pcm_rb_get_format")
     public static function ma_pcm_rb_get_format(pRB: cpp.Star<MaPcmRb>): MaFormat;
@@ -4300,22 +4300,22 @@ extern class Miniaudio {
     public static function ma_duplex_rb_uninit(pRB: cpp.Star<MaDuplexRb>): MaResult;
 
     @:native("ma_malloc")
-    public static function ma_malloc(sz: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<Void>;
+    public static function ma_malloc(sz: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Void>;
 
     @:native("ma_calloc")
-    public static function ma_calloc(sz: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<Void>;
+    public static function ma_calloc(sz: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Void>;
 
     @:native("ma_realloc")
-    public static function ma_realloc(p: cpp.Star<Void>, sz: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<Void>;
+    public static function ma_realloc(p: cpp.Star<cpp.Void>, sz: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Void>;
 
     @:native("ma_free")
-    public static function ma_free(p: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
+    public static function ma_free(p: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_aligned_malloc")
-    public static function ma_aligned_malloc(sz: cpp.SizeT, alignment: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<Void>;
+    public static function ma_aligned_malloc(sz: cpp.SizeT, alignment: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Void>;
 
     @:native("ma_aligned_free")
-    public static function ma_aligned_free(p: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
+    public static function ma_aligned_free(p: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_blend_f32")
     public static function ma_blend_f32(pOut: cpp.Star<cpp.Float32>, pInA: cpp.Star<cpp.Float32>, pInB: cpp.Star<cpp.Float32>, factor: cpp.Float32, channels: cpp.UInt32): Void;
@@ -4327,7 +4327,7 @@ extern class Miniaudio {
     public static function ma_data_source_uninit(pDataSource: cpp.Star<MaDataSource>): Void;
 
     @:native("ma_data_source_read_pcm_frames")
-    public static function ma_data_source_read_pcm_frames(pDataSource: cpp.Star<MaDataSource>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_data_source_read_pcm_frames(pDataSource: cpp.Star<MaDataSource>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_data_source_seek_pcm_frames")
     public static function ma_data_source_seek_pcm_frames(pDataSource: cpp.Star<MaDataSource>, frameCount: cpp.UInt64, pFramesSeeked: cpp.Star<cpp.UInt64>): MaResult;
@@ -4390,16 +4390,16 @@ extern class Miniaudio {
     public static function ma_audio_buffer_ref_uninit(pAudioBufferRef: cpp.Star<MaAudioBufferRef>): Void;
 
     @:native("ma_audio_buffer_ref_set_data")
-    public static function ma_audio_buffer_ref_set_data(pAudioBufferRef: cpp.Star<MaAudioBufferRef>, pData: cpp.Star<Void>, sizeInFrames: cpp.UInt64): MaResult;
+    public static function ma_audio_buffer_ref_set_data(pAudioBufferRef: cpp.Star<MaAudioBufferRef>, pData: cpp.Star<cpp.Void>, sizeInFrames: cpp.UInt64): MaResult;
 
     @:native("ma_audio_buffer_ref_read_pcm_frames")
-    public static function ma_audio_buffer_ref_read_pcm_frames(pAudioBufferRef: cpp.Star<MaAudioBufferRef>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, loop: cpp.UInt32): cpp.UInt64;
+    public static function ma_audio_buffer_ref_read_pcm_frames(pAudioBufferRef: cpp.Star<MaAudioBufferRef>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, loop: cpp.UInt32): cpp.UInt64;
 
     @:native("ma_audio_buffer_ref_seek_to_pcm_frame")
     public static function ma_audio_buffer_ref_seek_to_pcm_frame(pAudioBufferRef: cpp.Star<MaAudioBufferRef>, frameIndex: cpp.UInt64): MaResult;
 
     @:native("ma_audio_buffer_ref_map")
-    public static function ma_audio_buffer_ref_map(pAudioBufferRef: cpp.Star<MaAudioBufferRef>, ppFramesOut: cpp.Star<cpp.Star<Void>>, pFrameCount: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_audio_buffer_ref_map(pAudioBufferRef: cpp.Star<MaAudioBufferRef>, ppFramesOut: cpp.Star<cpp.Star<cpp.Void>>, pFrameCount: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_audio_buffer_ref_unmap")
     public static function ma_audio_buffer_ref_unmap(pAudioBufferRef: cpp.Star<MaAudioBufferRef>, frameCount: cpp.UInt64): MaResult;
@@ -4429,13 +4429,13 @@ extern class Miniaudio {
     public static function ma_audio_buffer_uninit_and_free(pAudioBuffer: cpp.Star<MaAudioBuffer>): Void;
 
     @:native("ma_audio_buffer_read_pcm_frames")
-    public static function ma_audio_buffer_read_pcm_frames(pAudioBuffer: cpp.Star<MaAudioBuffer>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, loop: cpp.UInt32): cpp.UInt64;
+    public static function ma_audio_buffer_read_pcm_frames(pAudioBuffer: cpp.Star<MaAudioBuffer>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, loop: cpp.UInt32): cpp.UInt64;
 
     @:native("ma_audio_buffer_seek_to_pcm_frame")
     public static function ma_audio_buffer_seek_to_pcm_frame(pAudioBuffer: cpp.Star<MaAudioBuffer>, frameIndex: cpp.UInt64): MaResult;
 
     @:native("ma_audio_buffer_map")
-    public static function ma_audio_buffer_map(pAudioBuffer: cpp.Star<MaAudioBuffer>, ppFramesOut: cpp.Star<cpp.Star<Void>>, pFrameCount: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_audio_buffer_map(pAudioBuffer: cpp.Star<MaAudioBuffer>, ppFramesOut: cpp.Star<cpp.Star<cpp.Void>>, pFrameCount: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_audio_buffer_unmap")
     public static function ma_audio_buffer_unmap(pAudioBuffer: cpp.Star<MaAudioBuffer>, frameCount: cpp.UInt64): MaResult;
@@ -4465,7 +4465,7 @@ extern class Miniaudio {
     public static function ma_paged_audio_buffer_data_get_length_in_pcm_frames(pData: cpp.Star<MaPagedAudioBufferData>, pLength: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_paged_audio_buffer_data_allocate_page")
-    public static function ma_paged_audio_buffer_data_allocate_page(pData: cpp.Star<MaPagedAudioBufferData>, pageSizeInFrames: cpp.UInt64, pInitialData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, ppPage: cpp.Star<cpp.Star<MaPagedAudioBufferPage>>): MaResult;
+    public static function ma_paged_audio_buffer_data_allocate_page(pData: cpp.Star<MaPagedAudioBufferData>, pageSizeInFrames: cpp.UInt64, pInitialData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, ppPage: cpp.Star<cpp.Star<MaPagedAudioBufferPage>>): MaResult;
 
     @:native("ma_paged_audio_buffer_data_free_page")
     public static function ma_paged_audio_buffer_data_free_page(pData: cpp.Star<MaPagedAudioBufferData>, pPage: cpp.Star<MaPagedAudioBufferPage>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): MaResult;
@@ -4474,13 +4474,13 @@ extern class Miniaudio {
     public static function ma_paged_audio_buffer_data_append_page(pData: cpp.Star<MaPagedAudioBufferData>, pPage: cpp.Star<MaPagedAudioBufferPage>): MaResult;
 
     @:native("ma_paged_audio_buffer_data_allocate_and_append_page")
-    public static function ma_paged_audio_buffer_data_allocate_and_append_page(pData: cpp.Star<MaPagedAudioBufferData>, pageSizeInFrames: cpp.UInt32, pInitialData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): MaResult;
+    public static function ma_paged_audio_buffer_data_allocate_and_append_page(pData: cpp.Star<MaPagedAudioBufferData>, pageSizeInFrames: cpp.UInt32, pInitialData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): MaResult;
 
     @:native("ma_paged_audio_buffer_uninit")
     public static function ma_paged_audio_buffer_uninit(pPagedAudioBuffer: cpp.Star<MaPagedAudioBuffer>): Void;
 
     @:native("ma_paged_audio_buffer_read_pcm_frames")
-    public static function ma_paged_audio_buffer_read_pcm_frames(pPagedAudioBuffer: cpp.Star<MaPagedAudioBuffer>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_paged_audio_buffer_read_pcm_frames(pPagedAudioBuffer: cpp.Star<MaPagedAudioBuffer>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_paged_audio_buffer_seek_to_pcm_frame")
     public static function ma_paged_audio_buffer_seek_to_pcm_frame(pPagedAudioBuffer: cpp.Star<MaPagedAudioBuffer>, frameIndex: cpp.UInt64): MaResult;
@@ -4498,10 +4498,10 @@ extern class Miniaudio {
     public static function ma_vfs_close(pVFS: cpp.Star<MaVfs>, file: MaVfsFile): MaResult;
 
     @:native("ma_vfs_read")
-    public static function ma_vfs_read(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, pDst: cpp.Star<Void>, sizeInBytes: cpp.SizeT, pBytesRead: cpp.Star<cpp.SizeT>): MaResult;
+    public static function ma_vfs_read(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, pDst: cpp.Star<cpp.Void>, sizeInBytes: cpp.SizeT, pBytesRead: cpp.Star<cpp.SizeT>): MaResult;
 
     @:native("ma_vfs_write")
-    public static function ma_vfs_write(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, pSrc: cpp.Star<Void>, sizeInBytes: cpp.SizeT, pBytesWritten: cpp.Star<cpp.SizeT>): MaResult;
+    public static function ma_vfs_write(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, pSrc: cpp.Star<cpp.Void>, sizeInBytes: cpp.SizeT, pBytesWritten: cpp.Star<cpp.SizeT>): MaResult;
 
     @:native("ma_vfs_seek")
     public static function ma_vfs_seek(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, offset: cpp.Int64, origin: MaSeekOrigin): MaResult;
@@ -4522,10 +4522,10 @@ extern class Miniaudio {
     public static function ma_vfs_or_default_close(pVFS: cpp.Star<MaVfs>, file: MaVfsFile): MaResult;
 
     @:native("ma_vfs_or_default_read")
-    public static function ma_vfs_or_default_read(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, pDst: cpp.Star<Void>, sizeInBytes: cpp.SizeT, pBytesRead: cpp.Star<cpp.SizeT>): MaResult;
+    public static function ma_vfs_or_default_read(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, pDst: cpp.Star<cpp.Void>, sizeInBytes: cpp.SizeT, pBytesRead: cpp.Star<cpp.SizeT>): MaResult;
 
     @:native("ma_vfs_or_default_write")
-    public static function ma_vfs_or_default_write(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, pSrc: cpp.Star<Void>, sizeInBytes: cpp.SizeT, pBytesWritten: cpp.Star<cpp.SizeT>): MaResult;
+    public static function ma_vfs_or_default_write(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, pSrc: cpp.Star<cpp.Void>, sizeInBytes: cpp.SizeT, pBytesWritten: cpp.Star<cpp.SizeT>): MaResult;
 
     @:native("ma_vfs_or_default_seek")
     public static function ma_vfs_or_default_seek(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, offset: cpp.Int64, origin: MaSeekOrigin): MaResult;
@@ -4537,10 +4537,10 @@ extern class Miniaudio {
     public static function ma_vfs_or_default_info(pVFS: cpp.Star<MaVfs>, file: MaVfsFile, pInfo: cpp.Star<MaFileInfo>): MaResult;
 
     @:native("ma_vfs_open_and_read_file")
-    public static function ma_vfs_open_and_read_file(pVFS: cpp.Star<MaVfs>, pFilePath: cpp.ConstCharStar, ppData: cpp.Star<cpp.Star<Void>>, pSize: cpp.Star<cpp.SizeT>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): MaResult;
+    public static function ma_vfs_open_and_read_file(pVFS: cpp.Star<MaVfs>, pFilePath: cpp.ConstCharStar, ppData: cpp.Star<cpp.Star<cpp.Void>>, pSize: cpp.Star<cpp.SizeT>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): MaResult;
 
     @:native("ma_vfs_open_and_read_file_w")
-    public static function ma_vfs_open_and_read_file_w(pVFS: cpp.Star<MaVfs>, pFilePath: cpp.ConstCharStar, ppData: cpp.Star<cpp.Star<Void>>, pSize: cpp.Star<cpp.SizeT>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): MaResult;
+    public static function ma_vfs_open_and_read_file_w(pVFS: cpp.Star<MaVfs>, pFilePath: cpp.ConstCharStar, ppData: cpp.Star<cpp.Star<cpp.Void>>, pSize: cpp.Star<cpp.SizeT>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): MaResult;
 
     @:native("ma_dr_wav_version")
     public static function ma_dr_wav_version(pMajor: cpp.Star<cpp.UInt32>, pMinor: cpp.Star<cpp.UInt32>, pRevision: cpp.Star<cpp.UInt32>): Void;
@@ -4549,25 +4549,25 @@ extern class Miniaudio {
     public static function ma_dr_wav_fmt_get_format(pFMT: cpp.Star<MaDrWavFmt>): cpp.UInt16;
 
     @:native("ma_dr_wav_init")
-    public static function ma_dr_wav_init(pWav: cpp.Star<MaDrWav>, onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init(pWav: cpp.Star<MaDrWav>, onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_flac_version")
     public static function ma_dr_flac_version(pMajor: cpp.Star<cpp.UInt32>, pMinor: cpp.Star<cpp.UInt32>, pRevision: cpp.Star<cpp.UInt32>): Void;
 
     @:native("ma_dr_flac_open")
-    public static function ma_dr_flac_open(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
+    public static function ma_dr_flac_open(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
 
     @:native("ma_dr_flac_init_vorbis_comment_iterator")
-    public static function ma_dr_flac_init_vorbis_comment_iterator(pIter: cpp.Star<MaDrFlacVorbisCommentIterator>, commentCount: cpp.UInt32, pComments: cpp.Star<Void>): Void;
+    public static function ma_dr_flac_init_vorbis_comment_iterator(pIter: cpp.Star<MaDrFlacVorbisCommentIterator>, commentCount: cpp.UInt32, pComments: cpp.Star<cpp.Void>): Void;
 
     @:native("ma_dr_flac_init_cuesheet_track_iterator")
-    public static function ma_dr_flac_init_cuesheet_track_iterator(pIter: cpp.Star<MaDrFlacCuesheetTrackIterator>, trackCount: cpp.UInt32, pTrackData: cpp.Star<Void>): Void;
+    public static function ma_dr_flac_init_cuesheet_track_iterator(pIter: cpp.Star<MaDrFlacCuesheetTrackIterator>, trackCount: cpp.UInt32, pTrackData: cpp.Star<cpp.Void>): Void;
 
     @:native("ma_dr_mp3_version")
     public static function ma_dr_mp3_version(pMajor: cpp.Star<cpp.UInt32>, pMinor: cpp.Star<cpp.UInt32>, pRevision: cpp.Star<cpp.UInt32>): Void;
 
     @:native("ma_dr_mp3_init")
-    public static function ma_dr_mp3_init(pMP3: cpp.Star<MaDrMp3>, onRead: MaDrMp3ReadProc, onSeek: MaDrMp3SeekProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_mp3_init(pMP3: cpp.Star<MaDrMp3>, onRead: MaDrMp3ReadProc, onSeek: MaDrMp3SeekProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_decoder_config_init_default")
     public static function ma_decoder_config_init_default(): MaDecoderConfig;
@@ -4576,7 +4576,7 @@ extern class Miniaudio {
     public static function ma_decoder_config_init_copy(pConfig: cpp.Star<MaDecoderConfig>): MaDecoderConfig;
 
     @:native("ma_wav_init")
-    public static function ma_wav_init(onRead: MaReadProc, onSeek: MaSeekProc, onTell: MaTellProc, pReadSeekTellUserData: cpp.Star<Void>, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pWav: cpp.Star<MaWav>): MaResult;
+    public static function ma_wav_init(onRead: MaReadProc, onSeek: MaSeekProc, onTell: MaTellProc, pReadSeekTellUserData: cpp.Star<cpp.Void>, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pWav: cpp.Star<MaWav>): MaResult;
 
     @:native("ma_wav_init_file")
     public static function ma_wav_init_file(pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pWav: cpp.Star<MaWav>): MaResult;
@@ -4585,13 +4585,13 @@ extern class Miniaudio {
     public static function ma_wav_init_file_w(pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pWav: cpp.Star<MaWav>): MaResult;
 
     @:native("ma_wav_init_memory")
-    public static function ma_wav_init_memory(pData: cpp.Star<Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pWav: cpp.Star<MaWav>): MaResult;
+    public static function ma_wav_init_memory(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pWav: cpp.Star<MaWav>): MaResult;
 
     @:native("ma_wav_uninit")
     public static function ma_wav_uninit(pWav: cpp.Star<MaWav>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_wav_read_pcm_frames")
-    public static function ma_wav_read_pcm_frames(pWav: cpp.Star<MaWav>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_wav_read_pcm_frames(pWav: cpp.Star<MaWav>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_wav_seek_to_pcm_frame")
     public static function ma_wav_seek_to_pcm_frame(pWav: cpp.Star<MaWav>, frameIndex: cpp.UInt64): MaResult;
@@ -4606,7 +4606,7 @@ extern class Miniaudio {
     public static function ma_wav_get_length_in_pcm_frames(pWav: cpp.Star<MaWav>, pLength: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_flac_init")
-    public static function ma_flac_init(onRead: MaReadProc, onSeek: MaSeekProc, onTell: MaTellProc, pReadSeekTellUserData: cpp.Star<Void>, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFlac: cpp.Star<MaFlac>): MaResult;
+    public static function ma_flac_init(onRead: MaReadProc, onSeek: MaSeekProc, onTell: MaTellProc, pReadSeekTellUserData: cpp.Star<cpp.Void>, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFlac: cpp.Star<MaFlac>): MaResult;
 
     @:native("ma_flac_init_file")
     public static function ma_flac_init_file(pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFlac: cpp.Star<MaFlac>): MaResult;
@@ -4615,13 +4615,13 @@ extern class Miniaudio {
     public static function ma_flac_init_file_w(pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFlac: cpp.Star<MaFlac>): MaResult;
 
     @:native("ma_flac_init_memory")
-    public static function ma_flac_init_memory(pData: cpp.Star<Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFlac: cpp.Star<MaFlac>): MaResult;
+    public static function ma_flac_init_memory(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pFlac: cpp.Star<MaFlac>): MaResult;
 
     @:native("ma_flac_uninit")
     public static function ma_flac_uninit(pFlac: cpp.Star<MaFlac>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_flac_read_pcm_frames")
-    public static function ma_flac_read_pcm_frames(pFlac: cpp.Star<MaFlac>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_flac_read_pcm_frames(pFlac: cpp.Star<MaFlac>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_flac_seek_to_pcm_frame")
     public static function ma_flac_seek_to_pcm_frame(pFlac: cpp.Star<MaFlac>, frameIndex: cpp.UInt64): MaResult;
@@ -4636,7 +4636,7 @@ extern class Miniaudio {
     public static function ma_flac_get_length_in_pcm_frames(pFlac: cpp.Star<MaFlac>, pLength: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_mp3_init")
-    public static function ma_mp3_init(onRead: MaReadProc, onSeek: MaSeekProc, onTell: MaTellProc, pReadSeekTellUserData: cpp.Star<Void>, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pMP3: cpp.Star<MaMp3>): MaResult;
+    public static function ma_mp3_init(onRead: MaReadProc, onSeek: MaSeekProc, onTell: MaTellProc, pReadSeekTellUserData: cpp.Star<cpp.Void>, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pMP3: cpp.Star<MaMp3>): MaResult;
 
     @:native("ma_mp3_init_file")
     public static function ma_mp3_init_file(pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pMP3: cpp.Star<MaMp3>): MaResult;
@@ -4645,13 +4645,13 @@ extern class Miniaudio {
     public static function ma_mp3_init_file_w(pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pMP3: cpp.Star<MaMp3>): MaResult;
 
     @:native("ma_mp3_init_memory")
-    public static function ma_mp3_init_memory(pData: cpp.Star<Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pMP3: cpp.Star<MaMp3>): MaResult;
+    public static function ma_mp3_init_memory(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pMP3: cpp.Star<MaMp3>): MaResult;
 
     @:native("ma_mp3_uninit")
     public static function ma_mp3_uninit(pMP3: cpp.Star<MaMp3>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_mp3_read_pcm_frames")
-    public static function ma_mp3_read_pcm_frames(pMP3: cpp.Star<MaMp3>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_mp3_read_pcm_frames(pMP3: cpp.Star<MaMp3>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_mp3_seek_to_pcm_frame")
     public static function ma_mp3_seek_to_pcm_frame(pMP3: cpp.Star<MaMp3>, frameIndex: cpp.UInt64): MaResult;
@@ -4666,19 +4666,19 @@ extern class Miniaudio {
     public static function ma_mp3_get_length_in_pcm_frames(pMP3: cpp.Star<MaMp3>, pLength: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_stbvorbis_init")
-    public static function ma_stbvorbis_init(onRead: MaReadProc, onSeek: MaSeekProc, onTell: MaTellProc, pReadSeekTellUserData: cpp.Star<Void>, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pVorbis: cpp.Star<MaStbvorbis>): MaResult;
+    public static function ma_stbvorbis_init(onRead: MaReadProc, onSeek: MaSeekProc, onTell: MaTellProc, pReadSeekTellUserData: cpp.Star<cpp.Void>, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pVorbis: cpp.Star<MaStbvorbis>): MaResult;
 
     @:native("ma_stbvorbis_init_file")
     public static function ma_stbvorbis_init_file(pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pVorbis: cpp.Star<MaStbvorbis>): MaResult;
 
     @:native("ma_stbvorbis_init_memory")
-    public static function ma_stbvorbis_init_memory(pData: cpp.Star<Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pVorbis: cpp.Star<MaStbvorbis>): MaResult;
+    public static function ma_stbvorbis_init_memory(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecodingBackendConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pVorbis: cpp.Star<MaStbvorbis>): MaResult;
 
     @:native("ma_stbvorbis_uninit")
     public static function ma_stbvorbis_uninit(pVorbis: cpp.Star<MaStbvorbis>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_stbvorbis_read_pcm_frames")
-    public static function ma_stbvorbis_read_pcm_frames(pVorbis: cpp.Star<MaStbvorbis>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_stbvorbis_read_pcm_frames(pVorbis: cpp.Star<MaStbvorbis>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_stbvorbis_seek_to_pcm_frame")
     public static function ma_stbvorbis_seek_to_pcm_frame(pVorbis: cpp.Star<MaStbvorbis>, frameIndex: cpp.UInt64): MaResult;
@@ -4693,10 +4693,10 @@ extern class Miniaudio {
     public static function ma_stbvorbis_get_length_in_pcm_frames(pVorbis: cpp.Star<MaStbvorbis>, pLength: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_decoder_init")
-    public static function ma_decoder_init(onRead: MaDecoderReadProc, onSeek: MaDecoderSeekProc, pUserData: cpp.Star<Void>, pConfig: cpp.Star<MaDecoderConfig>, pDecoder: cpp.Star<MaDecoder>): MaResult;
+    public static function ma_decoder_init(onRead: MaDecoderReadProc, onSeek: MaDecoderSeekProc, pUserData: cpp.Star<cpp.Void>, pConfig: cpp.Star<MaDecoderConfig>, pDecoder: cpp.Star<MaDecoder>): MaResult;
 
     @:native("ma_decoder_init_memory")
-    public static function ma_decoder_init_memory(pData: cpp.Star<Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecoderConfig>, pDecoder: cpp.Star<MaDecoder>): MaResult;
+    public static function ma_decoder_init_memory(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecoderConfig>, pDecoder: cpp.Star<MaDecoder>): MaResult;
 
     @:native("ma_decoder_init_vfs")
     public static function ma_decoder_init_vfs(pVFS: cpp.Star<MaVfs>, pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecoderConfig>, pDecoder: cpp.Star<MaDecoder>): MaResult;
@@ -4714,7 +4714,7 @@ extern class Miniaudio {
     public static function ma_decoder_uninit(pDecoder: cpp.Star<MaDecoder>): MaResult;
 
     @:native("ma_decoder_read_pcm_frames")
-    public static function ma_decoder_read_pcm_frames(pDecoder: cpp.Star<MaDecoder>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_decoder_read_pcm_frames(pDecoder: cpp.Star<MaDecoder>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_decoder_seek_to_pcm_frame")
     public static function ma_decoder_seek_to_pcm_frame(pDecoder: cpp.Star<MaDecoder>, frameIndex: cpp.UInt64): MaResult;
@@ -4732,19 +4732,19 @@ extern class Miniaudio {
     public static function ma_decoder_get_available_frames(pDecoder: cpp.Star<MaDecoder>, pAvailableFrames: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_decode_from_vfs")
-    public static function ma_decode_from_vfs(pVFS: cpp.Star<MaVfs>, pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecoderConfig>, pFrameCountOut: cpp.Star<cpp.UInt64>, ppPCMFramesOut: cpp.Star<cpp.Star<Void>>): MaResult;
+    public static function ma_decode_from_vfs(pVFS: cpp.Star<MaVfs>, pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecoderConfig>, pFrameCountOut: cpp.Star<cpp.UInt64>, ppPCMFramesOut: cpp.Star<cpp.Star<cpp.Void>>): MaResult;
 
     @:native("ma_decode_file")
-    public static function ma_decode_file(pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecoderConfig>, pFrameCountOut: cpp.Star<cpp.UInt64>, ppPCMFramesOut: cpp.Star<cpp.Star<Void>>): MaResult;
+    public static function ma_decode_file(pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDecoderConfig>, pFrameCountOut: cpp.Star<cpp.UInt64>, ppPCMFramesOut: cpp.Star<cpp.Star<cpp.Void>>): MaResult;
 
     @:native("ma_decode_memory")
-    public static function ma_decode_memory(pData: cpp.Star<Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecoderConfig>, pFrameCountOut: cpp.Star<cpp.UInt64>, ppPCMFramesOut: cpp.Star<cpp.Star<Void>>): MaResult;
+    public static function ma_decode_memory(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDecoderConfig>, pFrameCountOut: cpp.Star<cpp.UInt64>, ppPCMFramesOut: cpp.Star<cpp.Star<cpp.Void>>): MaResult;
 
     @:native("ma_encoder_preinit")
     public static function ma_encoder_preinit(pConfig: cpp.Star<MaEncoderConfig>, pEncoder: cpp.Star<MaEncoder>): MaResult;
 
     @:native("ma_encoder_init__internal")
-    public static function ma_encoder_init__internal(onWrite: MaEncoderWriteProc, onSeek: MaEncoderSeekProc, pUserData: cpp.Star<Void>, pEncoder: cpp.Star<MaEncoder>): MaResult;
+    public static function ma_encoder_init__internal(onWrite: MaEncoderWriteProc, onSeek: MaEncoderSeekProc, pUserData: cpp.Star<cpp.Void>, pEncoder: cpp.Star<MaEncoder>): MaResult;
 
     @:native("ma_encoder_init_vfs")
     public static function ma_encoder_init_vfs(pVFS: cpp.Star<MaVfs>, pFilePath: cpp.ConstCharStar, pConfig: cpp.Star<MaEncoderConfig>, pEncoder: cpp.Star<MaEncoder>): MaResult;
@@ -4762,7 +4762,7 @@ extern class Miniaudio {
     public static function ma_encoder_uninit(pEncoder: cpp.Star<MaEncoder>): Void;
 
     @:native("ma_encoder_write_pcm_frames")
-    public static function ma_encoder_write_pcm_frames(pEncoder: cpp.Star<MaEncoder>, pFramesIn: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesWritten: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_encoder_write_pcm_frames(pEncoder: cpp.Star<MaEncoder>, pFramesIn: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesWritten: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_waveform_uninit")
     public static function ma_waveform_uninit(pWaveform: cpp.Star<MaWaveform>): Void;
@@ -4780,7 +4780,7 @@ extern class Miniaudio {
     public static function ma_waveform_set_sample_rate(pWaveform: cpp.Star<MaWaveform>, sampleRate: cpp.UInt32): MaResult;
 
     @:native("ma_waveform_read_pcm_frames")
-    public static function ma_waveform_read_pcm_frames(pWaveform: cpp.Star<MaWaveform>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_waveform_read_pcm_frames(pWaveform: cpp.Star<MaWaveform>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_waveform_seek_to_pcm_frame")
     public static function ma_waveform_seek_to_pcm_frame(pWaveform: cpp.Star<MaWaveform>, frameIndex: cpp.UInt64): MaResult;
@@ -4789,7 +4789,7 @@ extern class Miniaudio {
     public static function ma_pulsewave_uninit(pWaveform: cpp.Star<MaPulsewave>): Void;
 
     @:native("ma_pulsewave_read_pcm_frames")
-    public static function ma_pulsewave_read_pcm_frames(pWaveform: cpp.Star<MaPulsewave>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_pulsewave_read_pcm_frames(pWaveform: cpp.Star<MaPulsewave>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_pulsewave_seek_to_pcm_frame")
     public static function ma_pulsewave_seek_to_pcm_frame(pWaveform: cpp.Star<MaPulsewave>, frameIndex: cpp.UInt64): MaResult;
@@ -4807,7 +4807,7 @@ extern class Miniaudio {
     public static function ma_pulsewave_set_duty_cycle(pWaveform: cpp.Star<MaPulsewave>, dutyCycle: cpp.Float64): MaResult;
 
     @:native("ma_noise_init_preallocated")
-    public static function ma_noise_init_preallocated(pConfig: cpp.Star<MaNoiseConfig>, pHeap: cpp.Star<Void>, pNoise: cpp.Star<MaNoise>): MaResult;
+    public static function ma_noise_init_preallocated(pConfig: cpp.Star<MaNoiseConfig>, pHeap: cpp.Star<cpp.Void>, pNoise: cpp.Star<MaNoise>): MaResult;
 
     @:native("ma_noise_init")
     public static function ma_noise_init(pConfig: cpp.Star<MaNoiseConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pNoise: cpp.Star<MaNoise>): MaResult;
@@ -4825,7 +4825,7 @@ extern class Miniaudio {
     public static function ma_noise_set_type(pNoise: cpp.Star<MaNoise>, type: MaNoiseType): MaResult;
 
     @:native("ma_noise_read_pcm_frames")
-    public static function ma_noise_read_pcm_frames(pNoise: cpp.Star<MaNoise>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_noise_read_pcm_frames(pNoise: cpp.Star<MaNoise>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_resource_manager_uninit")
     public static function ma_resource_manager_uninit(pResourceManager: cpp.Star<MaResourceManager>): Void;
@@ -4849,7 +4849,7 @@ extern class Miniaudio {
     public static function ma_resource_manager_data_buffer_uninit(pDataBuffer: cpp.Star<MaResourceManagerDataBuffer>): MaResult;
 
     @:native("ma_resource_manager_data_buffer_read_pcm_frames")
-    public static function ma_resource_manager_data_buffer_read_pcm_frames(pDataBuffer: cpp.Star<MaResourceManagerDataBuffer>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_resource_manager_data_buffer_read_pcm_frames(pDataBuffer: cpp.Star<MaResourceManagerDataBuffer>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_resource_manager_data_buffer_seek_to_pcm_frame")
     public static function ma_resource_manager_data_buffer_seek_to_pcm_frame(pDataBuffer: cpp.Star<MaResourceManagerDataBuffer>, frameIndex: cpp.UInt64): MaResult;
@@ -4882,16 +4882,16 @@ extern class Miniaudio {
     public static function ma_resource_manager_register_file_w(pResourceManager: cpp.Star<MaResourceManager>, pFilePath: cpp.ConstCharStar, flags: cpp.UInt32): MaResult;
 
     @:native("ma_resource_manager_register_decoded_data")
-    public static function ma_resource_manager_register_decoded_data(pResourceManager: cpp.Star<MaResourceManager>, pName: cpp.ConstCharStar, pData: cpp.Star<Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, sampleRate: cpp.UInt32): MaResult;
+    public static function ma_resource_manager_register_decoded_data(pResourceManager: cpp.Star<MaResourceManager>, pName: cpp.ConstCharStar, pData: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, sampleRate: cpp.UInt32): MaResult;
 
     @:native("ma_resource_manager_register_decoded_data_w")
-    public static function ma_resource_manager_register_decoded_data_w(pResourceManager: cpp.Star<MaResourceManager>, pName: cpp.ConstCharStar, pData: cpp.Star<Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, sampleRate: cpp.UInt32): MaResult;
+    public static function ma_resource_manager_register_decoded_data_w(pResourceManager: cpp.Star<MaResourceManager>, pName: cpp.ConstCharStar, pData: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, format: MaFormat, channels: cpp.UInt32, sampleRate: cpp.UInt32): MaResult;
 
     @:native("ma_resource_manager_register_encoded_data")
-    public static function ma_resource_manager_register_encoded_data(pResourceManager: cpp.Star<MaResourceManager>, pName: cpp.ConstCharStar, pData: cpp.Star<Void>, sizeInBytes: cpp.SizeT): MaResult;
+    public static function ma_resource_manager_register_encoded_data(pResourceManager: cpp.Star<MaResourceManager>, pName: cpp.ConstCharStar, pData: cpp.Star<cpp.Void>, sizeInBytes: cpp.SizeT): MaResult;
 
     @:native("ma_resource_manager_register_encoded_data_w")
-    public static function ma_resource_manager_register_encoded_data_w(pResourceManager: cpp.Star<MaResourceManager>, pName: cpp.ConstCharStar, pData: cpp.Star<Void>, sizeInBytes: cpp.SizeT): MaResult;
+    public static function ma_resource_manager_register_encoded_data_w(pResourceManager: cpp.Star<MaResourceManager>, pName: cpp.ConstCharStar, pData: cpp.Star<cpp.Void>, sizeInBytes: cpp.SizeT): MaResult;
 
     @:native("ma_resource_manager_unregister_file")
     public static function ma_resource_manager_unregister_file(pResourceManager: cpp.Star<MaResourceManager>, pFilePath: cpp.ConstCharStar): MaResult;
@@ -4918,7 +4918,7 @@ extern class Miniaudio {
     public static function ma_resource_manager_data_stream_uninit(pDataStream: cpp.Star<MaResourceManagerDataStream>): MaResult;
 
     @:native("ma_resource_manager_data_stream_read_pcm_frames")
-    public static function ma_resource_manager_data_stream_read_pcm_frames(pDataStream: cpp.Star<MaResourceManagerDataStream>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_resource_manager_data_stream_read_pcm_frames(pDataStream: cpp.Star<MaResourceManagerDataStream>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_resource_manager_data_stream_seek_to_pcm_frame")
     public static function ma_resource_manager_data_stream_seek_to_pcm_frame(pDataStream: cpp.Star<MaResourceManagerDataStream>, frameIndex: cpp.UInt64): MaResult;
@@ -4960,13 +4960,13 @@ extern class Miniaudio {
     public static function ma_resource_manager_data_source_uninit(pDataSource: cpp.Star<MaResourceManagerDataSource>): MaResult;
 
     @:native("ma_resource_manager_data_source_read_pcm_frames")
-    public static function ma_resource_manager_data_source_read_pcm_frames(pDataSource: cpp.Star<MaResourceManagerDataSource>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_resource_manager_data_source_read_pcm_frames(pDataSource: cpp.Star<MaResourceManagerDataSource>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_resource_manager_data_source_seek_to_pcm_frame")
     public static function ma_resource_manager_data_source_seek_to_pcm_frame(pDataSource: cpp.Star<MaResourceManagerDataSource>, frameIndex: cpp.UInt64): MaResult;
 
     @:native("ma_resource_manager_data_source_map")
-    public static function ma_resource_manager_data_source_map(pDataSource: cpp.Star<MaResourceManagerDataSource>, ppFramesOut: cpp.Star<cpp.Star<Void>>, pFrameCount: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_resource_manager_data_source_map(pDataSource: cpp.Star<MaResourceManagerDataSource>, ppFramesOut: cpp.Star<cpp.Star<cpp.Void>>, pFrameCount: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_resource_manager_data_source_unmap")
     public static function ma_resource_manager_data_source_unmap(pDataSource: cpp.Star<MaResourceManagerDataSource>, frameCount: cpp.UInt64): MaResult;
@@ -5017,7 +5017,7 @@ extern class Miniaudio {
     public static function ma_node_graph_get_endpoint(pNodeGraph: cpp.Star<MaNodeGraph>): cpp.Star<MaNode>;
 
     @:native("ma_node_graph_read_pcm_frames")
-    public static function ma_node_graph_read_pcm_frames(pNodeGraph: cpp.Star<MaNodeGraph>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_node_graph_read_pcm_frames(pNodeGraph: cpp.Star<MaNodeGraph>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_node_graph_get_channels")
     public static function ma_node_graph_get_channels(pNodeGraph: cpp.Star<MaNodeGraph>): cpp.UInt32;
@@ -5029,7 +5029,7 @@ extern class Miniaudio {
     public static function ma_node_graph_set_time(pNodeGraph: cpp.Star<MaNodeGraph>, globalTime: cpp.UInt64): MaResult;
 
     @:native("ma_node_init_preallocated")
-    public static function ma_node_init_preallocated(pNodeGraph: cpp.Star<MaNodeGraph>, pConfig: cpp.Star<MaNodeConfig>, pHeap: cpp.Star<Void>, pNode: cpp.Star<MaNode>): MaResult;
+    public static function ma_node_init_preallocated(pNodeGraph: cpp.Star<MaNodeGraph>, pConfig: cpp.Star<MaNodeConfig>, pHeap: cpp.Star<cpp.Void>, pNode: cpp.Star<MaNode>): MaResult;
 
     @:native("ma_node_init")
     public static function ma_node_init(pNodeGraph: cpp.Star<MaNodeGraph>, pConfig: cpp.Star<MaNodeConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pNode: cpp.Star<MaNode>): MaResult;
@@ -5173,7 +5173,7 @@ extern class Miniaudio {
     public static function ma_delay_node_get_decay(pDelayNode: cpp.Star<MaDelayNode>): cpp.Float32;
 
     @:native("ma_engine_node_init_preallocated")
-    public static function ma_engine_node_init_preallocated(pConfig: cpp.Star<MaEngineNodeConfig>, pHeap: cpp.Star<Void>, pEngineNode: cpp.Star<MaEngineNode>): MaResult;
+    public static function ma_engine_node_init_preallocated(pConfig: cpp.Star<MaEngineNodeConfig>, pHeap: cpp.Star<cpp.Void>, pEngineNode: cpp.Star<MaEngineNode>): MaResult;
 
     @:native("ma_engine_node_init")
     public static function ma_engine_node_init(pConfig: cpp.Star<MaEngineNodeConfig>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pEngineNode: cpp.Star<MaEngineNode>): MaResult;
@@ -5191,7 +5191,7 @@ extern class Miniaudio {
     public static function ma_engine_uninit(pEngine: cpp.Star<MaEngine>): Void;
 
     @:native("ma_engine_read_pcm_frames")
-    public static function ma_engine_read_pcm_frames(pEngine: cpp.Star<MaEngine>, pFramesOut: cpp.Star<Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
+    public static function ma_engine_read_pcm_frames(pEngine: cpp.Star<MaEngine>, pFramesOut: cpp.Star<cpp.Void>, frameCount: cpp.UInt64, pFramesRead: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_engine_get_node_graph")
     public static function ma_engine_get_node_graph(pEngine: cpp.Star<MaEngine>): cpp.Star<MaNodeGraph>;
@@ -5527,7 +5527,7 @@ extern class Miniaudio {
     public static function ma_sound_get_length_in_seconds(pSound: cpp.Star<MaSound>, pLength: cpp.Star<cpp.Float32>): MaResult;
 
     @:native("ma_sound_set_end_callback")
-    public static function ma_sound_set_end_callback(pSound: cpp.Star<MaSound>, callback: MaSoundEndProc, pUserData: cpp.Star<Void>): MaResult;
+    public static function ma_sound_set_end_callback(pSound: cpp.Star<MaSound>, callback: MaSoundEndProc, pUserData: cpp.Star<cpp.Void>): MaResult;
 
     @:native("ma_sound_group_init")
     public static function ma_sound_group_init(pEngine: cpp.Star<MaEngine>, flags: cpp.UInt32, pParentGroup: cpp.Star<MaSoundGroup>, pGroup: cpp.Star<MaSoundGroup>): MaResult;
@@ -5695,25 +5695,25 @@ extern class Miniaudio {
     public static function ma_sound_group_get_time_in_pcm_frames(pGroup: cpp.Star<MaSoundGroup>): cpp.UInt64;
 
     @:native("ma_dr_wav_init_ex")
-    public static function ma_dr_wav_init_ex(pWav: cpp.Star<MaDrWav>, onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, onChunk: MaDrWavChunkProc, pReadSeekUserData: cpp.Star<Void>, pChunkUserData: cpp.Star<Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_ex(pWav: cpp.Star<MaDrWav>, onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, onChunk: MaDrWavChunkProc, pReadSeekUserData: cpp.Star<cpp.Void>, pChunkUserData: cpp.Star<cpp.Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_with_metadata")
-    public static function ma_dr_wav_init_with_metadata(pWav: cpp.Star<MaDrWav>, onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_with_metadata(pWav: cpp.Star<MaDrWav>, onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<cpp.Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_take_ownership_of_metadata")
     public static function ma_dr_wav_take_ownership_of_metadata(pWav: cpp.Star<MaDrWav>): cpp.Star<MaDrWavMetadata>;
 
     @:native("ma_dr_wav_init_write")
-    public static function ma_dr_wav_init_write(pWav: cpp.Star<MaDrWav>, pFormat: cpp.Star<MaDrWavDataFormat>, onWrite: MaDrWavWriteProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_write(pWav: cpp.Star<MaDrWav>, pFormat: cpp.Star<MaDrWavDataFormat>, onWrite: MaDrWavWriteProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_write_sequential")
-    public static function ma_dr_wav_init_write_sequential(pWav: cpp.Star<MaDrWav>, pFormat: cpp.Star<MaDrWavDataFormat>, totalSampleCount: cpp.UInt64, onWrite: MaDrWavWriteProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_write_sequential(pWav: cpp.Star<MaDrWav>, pFormat: cpp.Star<MaDrWavDataFormat>, totalSampleCount: cpp.UInt64, onWrite: MaDrWavWriteProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_write_sequential_pcm_frames")
-    public static function ma_dr_wav_init_write_sequential_pcm_frames(pWav: cpp.Star<MaDrWav>, pFormat: cpp.Star<MaDrWavDataFormat>, totalPCMFrameCount: cpp.UInt64, onWrite: MaDrWavWriteProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_write_sequential_pcm_frames(pWav: cpp.Star<MaDrWav>, pFormat: cpp.Star<MaDrWavDataFormat>, totalPCMFrameCount: cpp.UInt64, onWrite: MaDrWavWriteProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_write_with_metadata")
-    public static function ma_dr_wav_init_write_with_metadata(pWav: cpp.Star<MaDrWav>, pFormat: cpp.Star<MaDrWavDataFormat>, onWrite: MaDrWavWriteProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pMetadata: cpp.Star<MaDrWavMetadata>, metadataCount: cpp.UInt32): cpp.UInt32;
+    public static function ma_dr_wav_init_write_with_metadata(pWav: cpp.Star<MaDrWav>, pFormat: cpp.Star<MaDrWavDataFormat>, onWrite: MaDrWavWriteProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>, pMetadata: cpp.Star<MaDrWavMetadata>, metadataCount: cpp.UInt32): cpp.UInt32;
 
     @:native("ma_dr_wav_target_write_size_bytes")
     public static function ma_dr_wav_target_write_size_bytes(pFormat: cpp.Star<MaDrWavDataFormat>, totalFrameCount: cpp.UInt64, pMetadata: cpp.Star<MaDrWavMetadata>, metadataCount: cpp.UInt32): cpp.UInt64;
@@ -5722,13 +5722,13 @@ extern class Miniaudio {
     public static function ma_dr_wav_init_file(pWav: cpp.Star<MaDrWav>, filename: cpp.ConstCharStar, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_file_ex")
-    public static function ma_dr_wav_init_file_ex(pWav: cpp.Star<MaDrWav>, filename: cpp.ConstCharStar, onChunk: MaDrWavChunkProc, pChunkUserData: cpp.Star<Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_file_ex(pWav: cpp.Star<MaDrWav>, filename: cpp.ConstCharStar, onChunk: MaDrWavChunkProc, pChunkUserData: cpp.Star<cpp.Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_file_w")
     public static function ma_dr_wav_init_file_w(pWav: cpp.Star<MaDrWav>, filename: cpp.ConstCharStar, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_file_ex_w")
-    public static function ma_dr_wav_init_file_ex_w(pWav: cpp.Star<MaDrWav>, filename: cpp.ConstCharStar, onChunk: MaDrWavChunkProc, pChunkUserData: cpp.Star<Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_file_ex_w(pWav: cpp.Star<MaDrWav>, filename: cpp.ConstCharStar, onChunk: MaDrWavChunkProc, pChunkUserData: cpp.Star<cpp.Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_file_with_metadata")
     public static function ma_dr_wav_init_file_with_metadata(pWav: cpp.Star<MaDrWav>, filename: cpp.ConstCharStar, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
@@ -5755,37 +5755,37 @@ extern class Miniaudio {
     public static function ma_dr_wav_init_file_write_sequential_pcm_frames_w(pWav: cpp.Star<MaDrWav>, filename: cpp.ConstCharStar, pFormat: cpp.Star<MaDrWavDataFormat>, totalPCMFrameCount: cpp.UInt64, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_memory")
-    public static function ma_dr_wav_init_memory(pWav: cpp.Star<MaDrWav>, data: cpp.Star<Void>, dataSize: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_memory(pWav: cpp.Star<MaDrWav>, data: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_memory_ex")
-    public static function ma_dr_wav_init_memory_ex(pWav: cpp.Star<MaDrWav>, data: cpp.Star<Void>, dataSize: cpp.SizeT, onChunk: MaDrWavChunkProc, pChunkUserData: cpp.Star<Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_memory_ex(pWav: cpp.Star<MaDrWav>, data: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, onChunk: MaDrWavChunkProc, pChunkUserData: cpp.Star<cpp.Void>, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_memory_with_metadata")
-    public static function ma_dr_wav_init_memory_with_metadata(pWav: cpp.Star<MaDrWav>, data: cpp.Star<Void>, dataSize: cpp.SizeT, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_memory_with_metadata(pWav: cpp.Star<MaDrWav>, data: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, flags: cpp.UInt32, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_memory_write")
-    public static function ma_dr_wav_init_memory_write(pWav: cpp.Star<MaDrWav>, ppData: cpp.Star<cpp.Star<Void>>, pDataSize: cpp.Star<cpp.SizeT>, pFormat: cpp.Star<MaDrWavDataFormat>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_memory_write(pWav: cpp.Star<MaDrWav>, ppData: cpp.Star<cpp.Star<cpp.Void>>, pDataSize: cpp.Star<cpp.SizeT>, pFormat: cpp.Star<MaDrWavDataFormat>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_memory_write_sequential")
-    public static function ma_dr_wav_init_memory_write_sequential(pWav: cpp.Star<MaDrWav>, ppData: cpp.Star<cpp.Star<Void>>, pDataSize: cpp.Star<cpp.SizeT>, pFormat: cpp.Star<MaDrWavDataFormat>, totalSampleCount: cpp.UInt64, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_memory_write_sequential(pWav: cpp.Star<MaDrWav>, ppData: cpp.Star<cpp.Star<cpp.Void>>, pDataSize: cpp.Star<cpp.SizeT>, pFormat: cpp.Star<MaDrWavDataFormat>, totalSampleCount: cpp.UInt64, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_init_memory_write_sequential_pcm_frames")
-    public static function ma_dr_wav_init_memory_write_sequential_pcm_frames(pWav: cpp.Star<MaDrWav>, ppData: cpp.Star<cpp.Star<Void>>, pDataSize: cpp.Star<cpp.SizeT>, pFormat: cpp.Star<MaDrWavDataFormat>, totalPCMFrameCount: cpp.UInt64, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_wav_init_memory_write_sequential_pcm_frames(pWav: cpp.Star<MaDrWav>, ppData: cpp.Star<cpp.Star<cpp.Void>>, pDataSize: cpp.Star<cpp.SizeT>, pFormat: cpp.Star<MaDrWavDataFormat>, totalPCMFrameCount: cpp.UInt64, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_wav_uninit")
     public static function ma_dr_wav_uninit(pWav: cpp.Star<MaDrWav>): MaResult;
 
     @:native("ma_dr_wav_read_raw")
-    public static function ma_dr_wav_read_raw(pWav: cpp.Star<MaDrWav>, bytesToRead: cpp.SizeT, pBufferOut: cpp.Star<Void>): cpp.SizeT;
+    public static function ma_dr_wav_read_raw(pWav: cpp.Star<MaDrWav>, bytesToRead: cpp.SizeT, pBufferOut: cpp.Star<cpp.Void>): cpp.SizeT;
 
     @:native("ma_dr_wav_read_pcm_frames_le")
-    public static function ma_dr_wav_read_pcm_frames_le(pWav: cpp.Star<MaDrWav>, framesToRead: cpp.UInt64, pBufferOut: cpp.Star<Void>): cpp.UInt64;
+    public static function ma_dr_wav_read_pcm_frames_le(pWav: cpp.Star<MaDrWav>, framesToRead: cpp.UInt64, pBufferOut: cpp.Star<cpp.Void>): cpp.UInt64;
 
     @:native("ma_dr_wav_read_pcm_frames_be")
-    public static function ma_dr_wav_read_pcm_frames_be(pWav: cpp.Star<MaDrWav>, framesToRead: cpp.UInt64, pBufferOut: cpp.Star<Void>): cpp.UInt64;
+    public static function ma_dr_wav_read_pcm_frames_be(pWav: cpp.Star<MaDrWav>, framesToRead: cpp.UInt64, pBufferOut: cpp.Star<cpp.Void>): cpp.UInt64;
 
     @:native("ma_dr_wav_read_pcm_frames")
-    public static function ma_dr_wav_read_pcm_frames(pWav: cpp.Star<MaDrWav>, framesToRead: cpp.UInt64, pBufferOut: cpp.Star<Void>): cpp.UInt64;
+    public static function ma_dr_wav_read_pcm_frames(pWav: cpp.Star<MaDrWav>, framesToRead: cpp.UInt64, pBufferOut: cpp.Star<cpp.Void>): cpp.UInt64;
 
     @:native("ma_dr_wav_seek_to_pcm_frame")
     public static function ma_dr_wav_seek_to_pcm_frame(pWav: cpp.Star<MaDrWav>, targetFrameIndex: cpp.UInt64): cpp.UInt32;
@@ -5797,16 +5797,16 @@ extern class Miniaudio {
     public static function ma_dr_wav_get_length_in_pcm_frames(pWav: cpp.Star<MaDrWav>, pLength: cpp.Star<cpp.UInt64>): MaResult;
 
     @:native("ma_dr_wav_write_raw")
-    public static function ma_dr_wav_write_raw(pWav: cpp.Star<MaDrWav>, bytesToWrite: cpp.SizeT, pData: cpp.Star<Void>): cpp.SizeT;
+    public static function ma_dr_wav_write_raw(pWav: cpp.Star<MaDrWav>, bytesToWrite: cpp.SizeT, pData: cpp.Star<cpp.Void>): cpp.SizeT;
 
     @:native("ma_dr_wav_write_pcm_frames_le")
-    public static function ma_dr_wav_write_pcm_frames_le(pWav: cpp.Star<MaDrWav>, framesToWrite: cpp.UInt64, pData: cpp.Star<Void>): cpp.UInt64;
+    public static function ma_dr_wav_write_pcm_frames_le(pWav: cpp.Star<MaDrWav>, framesToWrite: cpp.UInt64, pData: cpp.Star<cpp.Void>): cpp.UInt64;
 
     @:native("ma_dr_wav_write_pcm_frames_be")
-    public static function ma_dr_wav_write_pcm_frames_be(pWav: cpp.Star<MaDrWav>, framesToWrite: cpp.UInt64, pData: cpp.Star<Void>): cpp.UInt64;
+    public static function ma_dr_wav_write_pcm_frames_be(pWav: cpp.Star<MaDrWav>, framesToWrite: cpp.UInt64, pData: cpp.Star<cpp.Void>): cpp.UInt64;
 
     @:native("ma_dr_wav_write_pcm_frames")
-    public static function ma_dr_wav_write_pcm_frames(pWav: cpp.Star<MaDrWav>, framesToWrite: cpp.UInt64, pData: cpp.Star<Void>): cpp.UInt64;
+    public static function ma_dr_wav_write_pcm_frames(pWav: cpp.Star<MaDrWav>, framesToWrite: cpp.UInt64, pData: cpp.Star<cpp.Void>): cpp.UInt64;
 
     @:native("ma_dr_wav_read_pcm_frames_s16")
     public static function ma_dr_wav_read_pcm_frames_s16(pWav: cpp.Star<MaDrWav>, framesToRead: cpp.UInt64, pBufferOut: cpp.Star<cpp.Int16>): cpp.UInt64;
@@ -5899,13 +5899,13 @@ extern class Miniaudio {
     public static function ma_dr_wav_mulaw_to_s32(pOut: cpp.Star<cpp.Int32>, pIn: cpp.Star<cpp.UInt8>, sampleCount: cpp.SizeT): Void;
 
     @:native("ma_dr_wav_open_and_read_pcm_frames_s16")
-    public static function ma_dr_wav_open_and_read_pcm_frames_s16(onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
+    public static function ma_dr_wav_open_and_read_pcm_frames_s16(onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<cpp.Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
 
     @:native("ma_dr_wav_open_and_read_pcm_frames_f32")
-    public static function ma_dr_wav_open_and_read_pcm_frames_f32(onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
+    public static function ma_dr_wav_open_and_read_pcm_frames_f32(onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<cpp.Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
 
     @:native("ma_dr_wav_open_and_read_pcm_frames_s32")
-    public static function ma_dr_wav_open_and_read_pcm_frames_s32(onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
+    public static function ma_dr_wav_open_and_read_pcm_frames_s32(onRead: MaDrWavReadProc, onSeek: MaDrWavSeekProc, pUserData: cpp.Star<cpp.Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
 
     @:native("ma_dr_wav_open_file_and_read_pcm_frames_s16")
     public static function ma_dr_wav_open_file_and_read_pcm_frames_s16(filename: cpp.ConstCharStar, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
@@ -5926,16 +5926,16 @@ extern class Miniaudio {
     public static function ma_dr_wav_open_file_and_read_pcm_frames_s32_w(filename: cpp.ConstCharStar, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
 
     @:native("ma_dr_wav_open_memory_and_read_pcm_frames_s16")
-    public static function ma_dr_wav_open_memory_and_read_pcm_frames_s16(data: cpp.Star<Void>, dataSize: cpp.SizeT, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
+    public static function ma_dr_wav_open_memory_and_read_pcm_frames_s16(data: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
 
     @:native("ma_dr_wav_open_memory_and_read_pcm_frames_f32")
-    public static function ma_dr_wav_open_memory_and_read_pcm_frames_f32(data: cpp.Star<Void>, dataSize: cpp.SizeT, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
+    public static function ma_dr_wav_open_memory_and_read_pcm_frames_f32(data: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
 
     @:native("ma_dr_wav_open_memory_and_read_pcm_frames_s32")
-    public static function ma_dr_wav_open_memory_and_read_pcm_frames_s32(data: cpp.Star<Void>, dataSize: cpp.SizeT, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
+    public static function ma_dr_wav_open_memory_and_read_pcm_frames_s32(data: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
 
     @:native("ma_dr_wav_free")
-    public static function ma_dr_wav_free(p: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
+    public static function ma_dr_wav_free(p: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_dr_wav_bytes_to_u16")
     public static function ma_dr_wav_bytes_to_u16(data: cpp.Star<cpp.UInt8>): cpp.UInt16;
@@ -5968,25 +5968,25 @@ extern class Miniaudio {
     public static function ma_dr_flac_open_file_w(pFileName: cpp.ConstCharStar, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
 
     @:native("ma_dr_flac_open_file_with_metadata")
-    public static function ma_dr_flac_open_file_with_metadata(pFileName: cpp.ConstCharStar, onMeta: MaDrFlacMetaProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
+    public static function ma_dr_flac_open_file_with_metadata(pFileName: cpp.ConstCharStar, onMeta: MaDrFlacMetaProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
 
     @:native("ma_dr_flac_open_file_with_metadata_w")
-    public static function ma_dr_flac_open_file_with_metadata_w(pFileName: cpp.ConstCharStar, onMeta: MaDrFlacMetaProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
+    public static function ma_dr_flac_open_file_with_metadata_w(pFileName: cpp.ConstCharStar, onMeta: MaDrFlacMetaProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
 
     @:native("ma_dr_flac_open_memory")
-    public static function ma_dr_flac_open_memory(pData: cpp.Star<Void>, dataSize: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
+    public static function ma_dr_flac_open_memory(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
 
     @:native("ma_dr_flac_open_memory_with_metadata")
-    public static function ma_dr_flac_open_memory_with_metadata(pData: cpp.Star<Void>, dataSize: cpp.SizeT, onMeta: MaDrFlacMetaProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
+    public static function ma_dr_flac_open_memory_with_metadata(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, onMeta: MaDrFlacMetaProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
 
     @:native("ma_dr_flac_open_relaxed")
-    public static function ma_dr_flac_open_relaxed(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, container: MaDrFlacContainer, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
+    public static function ma_dr_flac_open_relaxed(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, container: MaDrFlacContainer, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
 
     @:native("ma_dr_flac_open_with_metadata")
-    public static function ma_dr_flac_open_with_metadata(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, onMeta: MaDrFlacMetaProc, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
+    public static function ma_dr_flac_open_with_metadata(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, onMeta: MaDrFlacMetaProc, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
 
     @:native("ma_dr_flac_open_with_metadata_relaxed")
-    public static function ma_dr_flac_open_with_metadata_relaxed(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, onMeta: MaDrFlacMetaProc, container: MaDrFlacContainer, pUserData: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
+    public static function ma_dr_flac_open_with_metadata_relaxed(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, onMeta: MaDrFlacMetaProc, container: MaDrFlacContainer, pUserData: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<MaDrFlac>;
 
     @:native("ma_dr_flac_close")
     public static function ma_dr_flac_close(pFlac: cpp.Star<MaDrFlac>): Void;
@@ -6004,13 +6004,13 @@ extern class Miniaudio {
     public static function ma_dr_flac_seek_to_pcm_frame(pFlac: cpp.Star<MaDrFlac>, pcmFrameIndex: cpp.UInt64): cpp.UInt32;
 
     @:native("ma_dr_flac_open_and_read_pcm_frames_s32")
-    public static function ma_dr_flac_open_and_read_pcm_frames_s32(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, pUserData: cpp.Star<Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalPCMFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
+    public static function ma_dr_flac_open_and_read_pcm_frames_s32(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, pUserData: cpp.Star<cpp.Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalPCMFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
 
     @:native("ma_dr_flac_open_and_read_pcm_frames_s16")
-    public static function ma_dr_flac_open_and_read_pcm_frames_s16(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, pUserData: cpp.Star<Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalPCMFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
+    public static function ma_dr_flac_open_and_read_pcm_frames_s16(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, pUserData: cpp.Star<cpp.Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalPCMFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
 
     @:native("ma_dr_flac_open_and_read_pcm_frames_f32")
-    public static function ma_dr_flac_open_and_read_pcm_frames_f32(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, pUserData: cpp.Star<Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalPCMFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
+    public static function ma_dr_flac_open_and_read_pcm_frames_f32(onRead: MaDrFlacReadProc, onSeek: MaDrFlacSeekProc, pUserData: cpp.Star<cpp.Void>, channelsOut: cpp.Star<cpp.UInt32>, sampleRateOut: cpp.Star<cpp.UInt32>, totalPCMFrameCountOut: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
 
     @:native("ma_dr_flac_open_file_and_read_pcm_frames_s32")
     public static function ma_dr_flac_open_file_and_read_pcm_frames_s32(filename: cpp.ConstCharStar, channels: cpp.Star<cpp.UInt32>, sampleRate: cpp.Star<cpp.UInt32>, totalPCMFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
@@ -6022,22 +6022,22 @@ extern class Miniaudio {
     public static function ma_dr_flac_open_file_and_read_pcm_frames_f32(filename: cpp.ConstCharStar, channels: cpp.Star<cpp.UInt32>, sampleRate: cpp.Star<cpp.UInt32>, totalPCMFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
 
     @:native("ma_dr_flac_open_memory_and_read_pcm_frames_s32")
-    public static function ma_dr_flac_open_memory_and_read_pcm_frames_s32(data: cpp.Star<Void>, dataSize: cpp.SizeT, channels: cpp.Star<cpp.UInt32>, sampleRate: cpp.Star<cpp.UInt32>, totalPCMFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
+    public static function ma_dr_flac_open_memory_and_read_pcm_frames_s32(data: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, channels: cpp.Star<cpp.UInt32>, sampleRate: cpp.Star<cpp.UInt32>, totalPCMFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int32>;
 
     @:native("ma_dr_flac_open_memory_and_read_pcm_frames_s16")
-    public static function ma_dr_flac_open_memory_and_read_pcm_frames_s16(data: cpp.Star<Void>, dataSize: cpp.SizeT, channels: cpp.Star<cpp.UInt32>, sampleRate: cpp.Star<cpp.UInt32>, totalPCMFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
+    public static function ma_dr_flac_open_memory_and_read_pcm_frames_s16(data: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, channels: cpp.Star<cpp.UInt32>, sampleRate: cpp.Star<cpp.UInt32>, totalPCMFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
 
     @:native("ma_dr_flac_open_memory_and_read_pcm_frames_f32")
-    public static function ma_dr_flac_open_memory_and_read_pcm_frames_f32(data: cpp.Star<Void>, dataSize: cpp.SizeT, channels: cpp.Star<cpp.UInt32>, sampleRate: cpp.Star<cpp.UInt32>, totalPCMFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
+    public static function ma_dr_flac_open_memory_and_read_pcm_frames_f32(data: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, channels: cpp.Star<cpp.UInt32>, sampleRate: cpp.Star<cpp.UInt32>, totalPCMFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
 
     @:native("ma_dr_flac_free")
-    public static function ma_dr_flac_free(p: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
+    public static function ma_dr_flac_free(p: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
     @:native("ma_dr_flac_next_cuesheet_track")
     public static function ma_dr_flac_next_cuesheet_track(pIter: cpp.Star<MaDrFlacCuesheetTrackIterator>, pCuesheetTrack: cpp.Star<MaDrFlacCuesheetTrack>): cpp.UInt32;
 
     @:native("ma_dr_mp3_init_memory")
-    public static function ma_dr_mp3_init_memory(pMP3: cpp.Star<MaDrMp3>, pData: cpp.Star<Void>, dataSize: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
+    public static function ma_dr_mp3_init_memory(pMP3: cpp.Star<MaDrMp3>, pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
 
     @:native("ma_dr_mp3_init_file")
     public static function ma_dr_mp3_init_file(pMP3: cpp.Star<MaDrMp3>, pFilePath: cpp.ConstCharStar, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.UInt32;
@@ -6073,16 +6073,16 @@ extern class Miniaudio {
     public static function ma_dr_mp3_bind_seek_table(pMP3: cpp.Star<MaDrMp3>, seekPointCount: cpp.UInt32, pSeekPoints: cpp.Star<MaDrMp3SeekPoint>): cpp.UInt32;
 
     @:native("ma_dr_mp3_open_and_read_pcm_frames_f32")
-    public static function ma_dr_mp3_open_and_read_pcm_frames_f32(onRead: MaDrMp3ReadProc, onSeek: MaDrMp3SeekProc, pUserData: cpp.Star<Void>, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
+    public static function ma_dr_mp3_open_and_read_pcm_frames_f32(onRead: MaDrMp3ReadProc, onSeek: MaDrMp3SeekProc, pUserData: cpp.Star<cpp.Void>, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
 
     @:native("ma_dr_mp3_open_and_read_pcm_frames_s16")
-    public static function ma_dr_mp3_open_and_read_pcm_frames_s16(onRead: MaDrMp3ReadProc, onSeek: MaDrMp3SeekProc, pUserData: cpp.Star<Void>, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
+    public static function ma_dr_mp3_open_and_read_pcm_frames_s16(onRead: MaDrMp3ReadProc, onSeek: MaDrMp3SeekProc, pUserData: cpp.Star<cpp.Void>, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
 
     @:native("ma_dr_mp3_open_memory_and_read_pcm_frames_f32")
-    public static function ma_dr_mp3_open_memory_and_read_pcm_frames_f32(pData: cpp.Star<Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
+    public static function ma_dr_mp3_open_memory_and_read_pcm_frames_f32(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
 
     @:native("ma_dr_mp3_open_memory_and_read_pcm_frames_s16")
-    public static function ma_dr_mp3_open_memory_and_read_pcm_frames_s16(pData: cpp.Star<Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
+    public static function ma_dr_mp3_open_memory_and_read_pcm_frames_s16(pData: cpp.Star<cpp.Void>, dataSize: cpp.SizeT, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
 
     @:native("ma_dr_mp3_open_file_and_read_pcm_frames_f32")
     public static function ma_dr_mp3_open_file_and_read_pcm_frames_f32(filePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Float32>;
@@ -6091,10 +6091,10 @@ extern class Miniaudio {
     public static function ma_dr_mp3_open_file_and_read_pcm_frames_s16(filePath: cpp.ConstCharStar, pConfig: cpp.Star<MaDrMp3Config>, pTotalFrameCount: cpp.Star<cpp.UInt64>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Int16>;
 
     @:native("ma_dr_mp3_malloc")
-    public static function ma_dr_mp3_malloc(sz: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<Void>;
+    public static function ma_dr_mp3_malloc(sz: cpp.SizeT, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): cpp.Star<cpp.Void>;
 
     @:native("ma_dr_mp3_free")
-    public static function ma_dr_mp3_free(p: cpp.Star<Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
+    public static function ma_dr_mp3_free(p: cpp.Star<cpp.Void>, pAllocationCallbacks: cpp.Star<MaAllocationCallbacks>): Void;
 
 }
 
